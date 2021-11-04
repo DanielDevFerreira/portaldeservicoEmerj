@@ -1,0 +1,334 @@
+header{
+    padding: 10px;
+    height: 80px;
+    width: 100%;
+    background-color: #0C344C;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > div {
+    margin-right: 50px;
+}
+
+header > div:nth-child(2), header > div:nth-child(3), header > div:nth-child(4), header > div:nth-child(5) {
+    position: relative; 
+    bottom: 5px;   
+}
+
+header > div:nth-child(2) > a > p{
+    margin-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header > div:nth-child(4){
+   display: flex;
+   justify-content: center;
+}
+
+header > div:nth-child(4) > i{
+   font-size: 20px;
+   margin-right: 5px;
+}
+
+header > div:nth-child(5){
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+}
+
+header > div:nth-child(5) > div > a > p{
+    font-size: 0.8rem;
+    margin-top: 15px;
+    border-right: 1px solid #474D6B;
+    padding-right: 25px;
+}
+
+header > div:nth-child(5) > div > i{
+    margin-right: 15px;
+    color: #474D6B;
+    cursor: pointer;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.logo_emerj{
+    box-shadow: 0px -5px 0px 0px #b99663 inset;
+    width: 150px;
+    z-index: 1;
+    background-color: #0C344C;
+    padding: 25px;
+    border-bottom-right-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+    left: 200px;
+    margin-top: 60px;
+}
+
+.acesso_rapido{
+    width: 820px;
+    margin-top: 10px;
+    position: relative;
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 15px;
+    left: 11%;
+}
+
+.acesso_rapido > div > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    height: 120px;
+    width: 100px;
+    text-align: center;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    color: white;
+    background-color: #0C344C;
+    margin-right: -10px;
+    padding: 15px 5px 0px 5px;
+}
+
+.acesso_rapido > div:hover > a {
+    box-shadow: 4px 0px 0px 0px #b99663 inset;
+}
+
+.acesso_rapido > div > a > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.acesso_rapido > div > a > p {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acesso_rapido > div > a > i:hover {
+    color: #b99663;
+}
+
+
+/* Acesso Rápido */
+.acessorapido_magistrados{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/acesso_rapido/magistrados.svg);
+    width: 45%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.acessorapido_eventos{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/acesso_rapido/eventos.svg);
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.acessorapido_cursosabertos{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/acesso_rapido/cursosabertos.svg);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.acessorapido_publicacoes{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/acesso_rapido/publicacoes.svg);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.acessorapido_portaldoaluno{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/acesso_rapido/portaldoaluno.svg);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.acessorapido_concursos{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/acesso_rapido/concursos.svg);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.acessorapido_emerjvirtual{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/acesso_rapido/emerjvirtual.svg);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.acessorapido_nucleosdepesquisa{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/acesso_rapido/nucleosdepesquisa.svg);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+  .imagem_emerj{  
+    content: url(https://emerj.com.br/portalservicosteste/files/imagens_home/imagem_emerj.svg);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Acesso Rápido */
+
+#link_titulo_emerj {
+    color: #FFF;
+}
+
+#link_faleconosco {
+    color: #FFF;
+    font-size: 0.8em;
+}
+
+.redessociais_menu {
+    color: #FFF;
+    font-size: 1.25em;
+    margin-right:0.5em;
+}
+
+.pesquisa_home{
+    color: #000;
+}
+
+
+@media only screen and (max-width: 1080px) {
+    header{
+        height: 95px;
+        grid-template-columns: 1fr;
+    }
+
+    header > div:nth-child(3), header > div:nth-child(4), header > div:nth-child(5){
+        display: none;
+    }
+
+    header > div:nth-child(2){
+        bottom: 5px !important;
+    }
+
+    .logo_emerj {
+      position: static;
+      width: 50px;
+      box-shadow: none;
+      background-color: #0C344C;
+      padding: 0px;
+      border-radius: 5px;
+      margin-top: 5px;
+      left: 15px;
+    
+    }
+
+    .acesso_rapido{
+        display: none;
+    }
+  }
+  
+
+  /* MENU MOBILE */
+
+  .menu_mobile{
+      display: none;
+  }
+
+  @media only screen and (max-width: 540px) {
+    .menu_mobile{
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid black;
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+        height: 80px;
+        width: 100%;
+        background-color: white;
+        border-top: 2px solid var(--secondary);
+    }
+
+    .menu_mobile > div:nth-child(1),
+    .menu_mobile > div:nth-child(2),
+    .menu_mobile > div:nth-child(4),
+    .menu_mobile > div:nth-child(5) {
+        border: 1px solid black;
+        text-align: center;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+        width: 80px;
+        background-color: var(--primary);
+        margin-bottom: 5px;
+    }
+
+    .menu_mobile > div:nth-child(2){
+        margin-right: 5px;
+    }
+    
+    .menu_mobile > div:nth-child(2) > a > i{
+        margin-bottom: 5px;
+    }
+    
+    .menu_mobile > div:nth-child(1) > a > i{
+        margin-bottom: 3px;
+    }
+    
+    .menu_mobile > div:nth-child(4){
+        margin-left: 5px;
+    }
+
+
+    .menu_mobile > div:nth-child(1) > a,
+    .menu_mobile > div:nth-child(2) > a,
+    .menu_mobile > div:nth-child(4) > a,
+    .menu_mobile > div:nth-child(5) > a{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding-top: 10px;
+        padding-right: 2px;
+        padding-left: 2px;
+        font-size: 0.7rem;
+    }
+
+    .menu_mobile > div:nth-child(5) > a > i, .menu_mobile > div:nth-child(5) > a > p {
+        position: relative;
+        top: 4px;
+    }
+
+    .menu_mobile > div:nth-child(3){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border-radius: 50%;
+        border-top: 2px solid var(--secondary);
+        position: absolute;
+        bottom: 40px;
+        background-color: white;
+        z-index: 1;
+    }
+
+    .menu_mobile > div:nth-child(3) > i {
+        width: 100%;
+    }
+  }
+  
+
+  

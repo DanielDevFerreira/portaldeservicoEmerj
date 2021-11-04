@@ -1,0 +1,95 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="add-label-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAddBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-name" id="add-label-departamento" class="col-form-label col-md-12 mb-0 p-0"></label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id-add">
+              <select name="departamento" required id="departamento" required class="form-select form-select-sm">
+                <option value=''>Selecione o departamento.</option>
+                  {{optionsDepartamento}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-servico" id="add-label-servico" class="col-form-label col-md-12 mb-0 p-0"></label>
+              <select name="servico" required id="servico" required class="form-select form-select-sm">
+                <option value=''>Selecione o Serviço</option>
+                  {{optionsServico}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label for="recipient-descricao" id="add-label-tipodeic" class="col-form-label col-md-12 mb-0 p-0"></label>
+              <select name="tipodeic" required id="tipodeic" required class="form-select form-select-sm">
+                <option value=''>Selecione o tipo de IC</option>
+                  {{optionsTiposdeic}}
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="recipient-sla" id="add-label-sla" class="col-form-label col-md-12 mb-0 p-0"></label>
+              <select name="sla" required id="sla" required class="form-select form-select-sm">
+                <option value=''>SLA</option>
+                <option value='24'>24 Horas</option>
+                <option value='48'>48 Horas</option>
+                <option value='72'>72 Horas</option>
+                <option value='168'>Uma semana</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="button-add" name="button">Cadastrar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var addModal = document.getElementById('addModal')
+    addModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+    var recipientDepartamento = button.getAttribute('data-bs-whatever-departamento')
+    var recipientDepartamentoLogin = button.getAttribute('data-bs-whatever-departamento_logado')
+
+    var modalURL = addModal.querySelector('#urlAddBt')
+    var modalTitle = addModal.querySelector('#add-label-title')
+    var modalDepartamento = addModal.querySelector('#add-label-departamento')
+    var modalServico = addModal.querySelector('#add-label-servico')
+    var modalTipodeIC = addModal.querySelector('#add-label-tipodeic')
+    var modalSla = addModal.querySelector('#add-label-sla')
+    var modalButton = addModal.querySelector('#button-add')
+    var modalImputDepartamentoLogin = addModal.querySelector('#departamento')
+
+
+    modalDepartamento.value = recipientDepartamento
+    modalTitle.textContent = 'Cadastrar '+recipientTitle
+    modalDepartamento.textContent = 'Departamento'
+    modalServico.textContent = 'Serviço'
+    modalTipodeIC.textContent = 'Tipo de IC'
+    modalSla.textContent = 'SLA'
+    modalButton.textContent = 'Cadastrar '+recipientTitle
+
+    modalImputDepartamentoLogin.value = recipientDepartamentoLogin
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/novo'
+
+  })
+</script>

@@ -1,0 +1,30 @@
+<h4>Detartamentos</h4>
+<section id="departamento">
+  {{itens}}
+  {{pagination}}
+</section>
+<h5>Departamento - Inclui novo Departamento</h5>
+<form method="post" action="?pagina=1">
+        <div class="form-group">
+            <label>Departamento</label>
+            <input type="text" class="form-control" name="nome" value=""/>
+        </div>
+        <div class="form-group">
+            <label>Descrição</label>
+            <input type="text" class="form-control" name="descricao" value=""/>
+        </div>
+        <div class="form-group">
+            <label>Sigla</label>
+            <input type="text" class="form-control" name="sigla" value=""/>
+        </div>
+        <div class="form-group">
+          <label>Departamento superior</label>
+              <select name="cod_dep_super" id="cod_dep_super" >
+                <option value=''>Selecione o Departamento Superior</option>
+                    {{itemselect}}
+              </select>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </div>
+    </form>

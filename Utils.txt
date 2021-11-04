@@ -1,0 +1,39 @@
+
+emerj.atwebpages.com
+
+
+
+
+
+SENHA:YEpjATrv53))Tg?u
+
+HOST:fdb33.awardspace.net
+
+PORT:3306
+
+NAME:3911839_emerj
+
+USER:3911839_emerj
+SENHA:nHLJs_i.nBe2XbC
+
+
+
+
+FTP:fdb33.awardspace.net
+
+j2HKFy7f0]5/V2wb
+
+
+
+db_emerj
+Host:mysql746.umbler.com
+senha1234
+
+$pdo = new PDO('mysql:charset=utf8mb4');
+
+array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+
+utf8_general_ci
+
+
+ini_set('default_charset', 'utf-8');

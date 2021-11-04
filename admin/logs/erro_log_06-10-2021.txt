@@ -1,0 +1,1 @@
+Erro: Código: 42S02 Mensagem: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'emerjco_portalservicos.tb_noticia' doesn't exist em: 06-10-2021, 06:38:14

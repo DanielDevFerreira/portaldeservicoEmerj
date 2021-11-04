@@ -1,0 +1,72 @@
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <h5 class="card-title">{{title}}</h5>
+  </div>
+  <div class="form-group col-md-6 d-flex justify-content-end" style="width:100%">
+      <a href="{{URL}}/admin/usuarios">
+        <button type="button" name="button" class="btn btn-sm btn-outline-primary">Voltar</button>
+      </a>
+  </div>
+</div>
+{{status}}
+<form method="post">
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <label>Nome do Usuário</label>
+        <input type="text" name="nome" maxlength="40" value="{{nome}}" required  class="form-control form-control-sm">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Perfil:</label>
+        <select name="perfil" required  class="form-select form-select-sm">
+          <option value=''>Selecione o perfil do usuário</option>
+          {{optionsPerfil}}
+        </select>
+    </div>
+
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Email</label>
+        <input type="email" name="email" maxlength="50" value="{{email}}" required  class="form-control form-control-sm">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label>Departamento:</label>
+        <select name="departamento" id="departamento" required  class="form-select form-select-sm">
+          <option value=''>Selecione o departamento do usuário</option>
+            {{optionsDepartamento}}
+        </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label>Cargo:</label>
+        <select name="cargo" required  class="form-select form-select-sm">
+          <option value=''>Selecione o cargo do usuário</option>
+          {{optionsCargo}}
+        </select>
+    </div>
+
+    <div class="form-group col-md-4">
+      <label>Telefone de contato</label>
+        <input type="text" name="contato" maxlength="20" value="{{contato}}" required  class="form-control form-control-sm">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Localização:</label>
+        <select name="sala" id="localizacao" required  class="form-select form-select-sm">
+          <option value=''>Selecione a localização do usuário</option>
+          {{optionsLocalizacao}}
+        </select>
+    </div>
+  </div>
+  <div class="form-group col-md-12 d-flex justify-content-center">
+    <button type="submit" class="btn btn-sm btn-primary" style="width:300px;">{{title}}</button>
+  </div>
+</form>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#departamento').select2();
+      $('#localizacao').select2();
+  });
+
+</script>

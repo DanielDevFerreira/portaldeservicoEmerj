@@ -1,0 +1,1 @@
+Erro: Código: 1045 Mensagem: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) em: 25-10-2021, 16:29:27

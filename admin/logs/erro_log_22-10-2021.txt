@@ -1,0 +1,1 @@
+Erro: Código: 1049 Mensagem: SQLSTATE[HY000] [1049] Unknown database 'emerjco_portalservicos' em: 22-10-2021, 09:02:19

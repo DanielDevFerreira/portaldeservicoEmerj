@@ -1,0 +1,180 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="add-label-title">Cadastrar {{title}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAddBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-tipo-add" id="add-label-tipo" class="col-form-label col-md-12 mb-0 p-0">Tipo de conteúdo: </label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id-add">
+              <select name="tipo" class="form-select form-select-sm" id="recipient-tipo-add" required>
+                <option value=''>Selecione o tipo de conteúdo</option>
+                <option value='1'>Link de divulgação</option>
+                <option disabled value='2'>Notícia</option>
+                <option disabled value='3'>Evento</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-nome-add" id="add-label-nome" class="col-form-label col-md-12 mb-0 p-0">Nome {{title}}: </label>
+              <input type="text" class="form-control form-control-sm" name="nome" value="" id="recipient-nome-add">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-url-add" id="add-label-url" class="col-form-label col-md-12 mb-0 p-0">URL do link: </label>
+              <input type="text" class="form-control form-control-sm" name="url" value="" id="recipient-url-add">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-txturl-add" id="add-label-txturl" class="col-form-label col-md-12 mb-0 p-0">Texto do link: </label>
+              <input type="text" class="form-control form-control-sm" name="txturl" value="" id="recipient-txturl-add">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="recipient-datainicio-add" id="add-label-datainicio" class="col-form-label col-md-12 mb-0 p-0">Data início: </label>
+              <input id="recipient-datainicio-add" autocomplete="off" type="text" name="datainicio" class="form-control form-control-sm" placeholder="Informe a data início" data-orientation="top">
+            </div>
+            <div class="form-group col-md-1.5">
+              <label for="recipient-datainicio-add" id="add-label-datainicio" class="col-form-label col-md-12 mb-0 p-0">Hora: </label>
+              <select name="horainicio" class="form-select form-select-sm" id="recipient-horainicio-add" required>
+                <option value='00'>00</option>
+                <option value='01'>01</option>
+                <option value='02'>02</option>
+                <option value='03'>03</option>
+                <option value='04'>04</option>
+                <option value='05'>05</option>
+                <option value='06'>06</option>
+                <option value='07'>07</option>
+                <option value='08'>08</option>
+                <option value='09'>09</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
+                <option value='15'>15</option>
+                <option value='16'>16</option>
+                <option value='17'>17</option>
+                <option value='18'>18</option>
+                <option value='19'>19</option>
+                <option value='20'>20</option>
+                <option value='21'>21</option>
+                <option value='22'>22</option>
+                <option value='23'>23</option>
+              </select>
+            </div>
+            <div class="form-group col-md-1.5">
+              <label for="recipient-mininicio-add" id="add-label-mininicio" class="col-form-label col-md-12 mb-0 p-0">min: </label>
+              <select name="mininicio" class="form-select form-select-sm" id="recipient-mininicio-add" required>
+                <option value='00'>00</option>
+                <option value='15'>15</option>
+                <option value='30'>30</option>
+                <option value='45'>45</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-datafim-add" id="add-label-datafim" class="col-form-label col-md-12 mb-0 p-0">Data fim: </label>
+              <input id="recipient-datafim-add" autocomplete="off" type="text" name="datafim" class="form-control form-control-sm" placeholder="Informe a data fim" data-orientation="top">
+            </div>
+            <div class="form-group col-md-1.5">
+              <label for="recipient-horafim-add" id="add-label-horafim" class="col-form-label col-md-12 mb-0 p-0">Hora: </label>
+              <select name="horafim" class="form-select form-select-sm" id="recipient-horafim-add" required>
+                <option value='00'>00</option>
+                <option value='01'>01</option>
+                <option value='02'>02</option>
+                <option value='03'>03</option>
+                <option value='04'>04</option>
+                <option value='05'>05</option>
+                <option value='06'>06</option>
+                <option value='07'>07</option>
+                <option value='08'>08</option>
+                <option value='09'>09</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
+                <option value='15'>15</option>
+                <option value='16'>16</option>
+                <option value='17'>17</option>
+                <option value='18'>18</option>
+                <option value='19'>19</option>
+                <option value='20'>20</option>
+                <option value='21'>21</option>
+                <option value='22'>22</option>
+                <option value='23'>23</option>
+              </select>
+            </div>
+            <div class="form-group col-md-1.5">
+              <label for="recipient-minfim-add" id="add-label-minfim" class="col-form-label col-md-12 mb-0 p-0">min: </label>
+              <select name="minfim" class="form-select form-select-sm" id="recipient-minfim-add" required>
+                <option value='00'>00</option>
+                <option value='15'>15</option>
+                <option value='30'>30</option>
+                <option value='45'>45</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-descricao-add" id="add-label-descricao" class="col-form-label col-md-12 mb-0 p-0">Descrição de : </label>
+              <textarea class="form-control form-control-sm" name="descricao" value="" id="recipient-descricao-add"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="add-button" name="button">Cadastrar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(function () {
+      $('#recipient-datainicio-add').datepicker({
+        language: 'pt-BR',
+        locale: 'pt-BR'
+      });
+    });
+
+    $(function () {
+      $('#recipient-datafim-add').datepicker({
+        language: 'pt-BR',
+        locale: 'pt-BR'
+      });
+    });
+
+    var addModal = document.getElementById('addModal')
+    addModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+
+    var modalURL = addModal.querySelector('#urlAddBt')
+    var modalTitle = addModal.querySelector('#add-label-title')
+    var modalNome = addModal.querySelector('#add-label-nome')
+    var modalDescricao = addModal.querySelector('#add-label-descricao')
+    var modalButton = addModal.querySelector('#add-button')
+
+    modalTitle.textContent = 'Cadastrar '+recipientTitle
+    modalNome.textContent = 'Nome d'+recipientTitlelow+':'
+    modalDescricao.textContent = 'Descrição d'+recipientTitlelow+':'
+    modalButton.textContent = 'Cadastrar '+recipientTitle
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/novo'
+
+  })
+</script>

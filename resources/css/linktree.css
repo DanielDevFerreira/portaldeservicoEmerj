@@ -1,0 +1,11 @@
+@import url(./bootstrap.min.css);
+@import url(./config.css);
+@import url(./global.css);
+@import url(./custom.css);
+@import url(./responsive.css);
+
+body,
+html{
+  background-color: var(--primary);
+  padding-bottom: 40px;
+}

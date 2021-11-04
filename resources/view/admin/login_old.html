@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center">
+  <div class="card mt-3 text-dark text-center" style="width:380px">
+    <div class="card-header">
+      <h1>Login</h1>
+    </div>
+    <div class="card-body">
+        {{status}}
+        <form method="post">
+          <div class="form-group">
+            <label class="align-bottom float-sm-left pl-2">E-mail</label>
+            <input type="email" class="form-control" placeholder="meuemail@email.com" name="email" required autofocus>
+          </div>
+          <div class="form-group">
+            <span class="align-bottom float-sm-right"><a href="{{URL}}/admin/recuperar">Esqueceu sua senha?</a></<span>
+          </div>
+          <div class="form-group">
+            <label class="align-bottom float-sm-left pl-2">Senha</label>
+            <input type="password" class="form-control" name="senha" placeholder="******************" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-ls btn-primary" style="width:100%">Entrar</button>
+          </div>
+          <div class="form-group hide">
+            <a href="{{URL}}/admin/cadastro">
+              <button type="button" name="button" class="btn btn-sm btn-secondary"><i class="bi-chat-dots" style="font-size: 1.rem; margin-right: 5px; color: white;"></i>Primeiro acesso? Valide seu cadastro.</button>
+            </a>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<!--Modal para resetar a senha do Usuário -->
+<div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header alert-dark">
+        <h5 class="modal-title" id="resetModalLabel">Confirmar o reset da senha</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true" class="alert-dark">&times;</span>
+        </button>
+      </div>
+      <form method="post">
+        <div class="modal-body" id="texto_resetarsenha">
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <a href="" id="urlResetSenhaUsuarioBt" type="button" role="button" class="btn btn-warning" name="button"></a>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var resetModal = document.getElementById('resetModal')
+    resetModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientId = button.getAttribute('data-bs-whatever-id')
+    var recipientNome = button.getAttribute('data-bs-whatever-nome')
+    var recipientEmail = button.getAttribute('data-bs-whatever-email')
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalURL = resetModal.querySelector('#urlResetSenhaUsuarioBt')
+    var modalTituloModalCentralizado = resetModal.querySelector('#resetModalLabel')
+    var modalDescricaoInput = resetModal.querySelector('#texto_resetarsenha')
+
+
+    modalTituloModalCentralizado.textContent = 'Confirmar o reset de senha d'+recipientTitlelow
+    modalDescricaoInput.textContent = 'Você deseja realmente resetar a senha do usuário ' + recipientNome + ' de e-mail ' + recipientEmail + '?'
+    modalURL.textContent = 'Resetar Senha'
+
+    modalURL.href = recipientURL+'/admin/'+recipientDIR+'/'+recipientId+'/reset'
+
+    ///************************
+    //SE HOUVER DIVERGÊNCIAS DARÁ ERRO 405 MÉDOTO NÃO ENCONTRADO!!!!!!!!!!!!!!
+    ///************************
+
+  })
+</script>

@@ -1,0 +1,53 @@
+<!--Modal para ativar e desativar/ativar uma localização -->
+<div class="modal fade" id="ativaModal"  tabindex="-1" aria-labelledby="ativaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header alert-warning">
+        <h5 class="modal-title" id="TituloModalCentralizado"><i class="bi-exclamation-diamond" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px;"></i>Confirmar alteração do status da Localização</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true" class="alert-warning">&times;</span>
+        </button>
+      </div>
+      <form method="post">
+      <div class="modal-body" id="texto_ativar_desativar">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        <a href="" id="urlAtivaLocalizacaoBt" type="button" role="button" class="btn btn-warning" name="button"></a>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var ativaModal = document.getElementById('ativaModal')
+    ativaModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientId = button.getAttribute('data-bs-whatever-id')
+    var recipientNome = button.getAttribute('data-bs-whatever-nome')
+    var recipientDescricao = button.getAttribute('data-bs-whatever-descricao')
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalURL = ativaModal.querySelector('#urlAtivaLocalizacaoBt')
+    var modalTituloModalCentralizado = ativaModal.querySelector('#TituloModalCentralizado')
+    var modalDescricaoInput = ativaModal.querySelector('#texto_ativar_desativar')
+
+
+    modalTituloModalCentralizado.textContent = 'Confirmar alteração do status d'+recipientTitlelow
+    modalDescricaoInput.textContent = 'Você deseja realmente ' + recipientDescricao + ' '+recipientTitlelow+' ' + recipientNome + '?'
+    modalURL.textContent = recipientDescricao + ' '+recipientTitlelow
+
+    modalURL.href = recipientURL+'/admin/'+recipientDIR+'/'+recipientId+'/alterastatus'
+
+    ///************************
+    //SE HOUVER DIVERGÊNCIAS DARÁ ERRO 405 MÉDOTO NÃO ENCONTRADO!!!!!!!!!!!!!!
+    ///************************
+
+  })
+</script>

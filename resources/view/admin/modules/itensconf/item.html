@@ -1,0 +1,23 @@
+<tr class="tr-sm {{style_ativo}}">
+  <th scope="row"><small>{{id}}</small></th>
+  <td><small>{{patrimonio}}</small></td>
+  <td><small>{{ndgtec}}</small></td>
+  <td><small>{{nome}}</small></td>
+  <td><small>{{departamento}}/{{localizacao}}</small></td>
+  <td><small>{{usuario}}</small></td>
+  <td><small>{{tipodeic}}</small></td>
+  <td>
+    <div role="toolbar" class="btn-toolbar float-sm-right">
+      <div class="btn-group dropleft" role="group">
+        <button id="btnGroupDrop{{id}}" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ações
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop{{id}}">
+          <a class="dropdown-item" href="{{URL}}/admin/itensconfs/{{id}}/edit" type="button" role="button" class="btn btn-primary btn-sm" name="button" data-bs-toggle="modal" data-bs-target="#editModal" data-bs-whatever-url="{{URL}}" data-bs-whatever-id="{{id}}" data-bs-whatever-nome="{{nome}}" data-bs-whatever-descricao="{{descricao}}" data-bs-whatever-departamento="{{id_departamento}}" data-bs-whatever-localizacao="{{id_localizacao}}" data-bs-whatever-usuario="{{id_usuario}}" data-bs-whatever-tipodeic="{{id_tipodeic}}" data-bs-whatever-itemdeconfiguracao="{{itemdeconfiguracao}}" data-bs-whatever-patrimonio="{{patrimonio}}" data-bs-whatever-ndgtec="{{ndgtec}}" data-bs-whatever-so="{{so}}" data-bs-whatever-rede="{{rede}}" data-bs-whatever-office="{{office}}" data-bs-whatever-memoria="{{memoria}}" data-bs-whatever-hardisc="{{hardisc}}" data-bs-whatever-monitor="{{monitor}}" data-bs-whatever-estabilizador="{{estabilizador}}" data-bs-whatever-obs="{{obs}}"><i class="bi-pencil-square" style="font-size: 1rem; margin-right: 3px; color: cornflowerblue;"></i>Editar</a>
+          <a class="dropdown-item" href="{{URL}}/admin/itensconfs/{{id}}/alterastatus" type="button" role="button" class="btn {{class_ativo}} btn-sm" name="button" data-bs-toggle="modal" data-bs-target="#ativaModal" data-bs-whatever-url="{{URL}}" data-bs-whatever-id="{{id}}" data-bs-whatever-nome="{{nome}}" data-bs-whatever-descricao="{{texto_ativo}}"><i class="bi-exclamation-diamond" style="font-size: 1rem; margin-right: 3px; color: darkorange;"></i>{{texto_ativo}}</a>
+          <a class="dropdown-item" href="{{URL}}/admin/itensconfs/{{id}}/delete" type="button" role="button" class="btn btn-danger btn-sm" name="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-whatever-url="{{URL}}" data-bs-whatever-id="{{id}}" data-bs-whatever-nome="{{nome}}" ><i class="bi-x-circle" style="font-size: 1rem; margin-right: 3px; color: red;"></i>Excluir</a>
+        </div>
+      </div>
+    </div>
+  </td>
+  </tr>

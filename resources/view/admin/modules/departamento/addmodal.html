@@ -1,0 +1,75 @@
+<!--Modal para para inserir Departamento -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="addModalLabel">Cadastrar Departamento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAddDepartamentoBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-name-add" id="label-nome-add" class="small-label is-required col-form-label col-md-12 mb-0 p-0">Nome do Depertamento</label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id-add">
+              <input type="text" class="form-control form-control-sm" name="nome" value="" id="recipient-nome-add" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-descricao-add" id="label-descricao-add" class="small-label is-required col-form-label col-md-12 mb-0 p-0">Descrição</label>
+              <input type="text" class="form-control form-control-sm" name="descricao" value="" id="recipient-descricao-add" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="recipient-sigla-add" id="label-sigla-add" class="small-label is-required col-form-label col-md-12 mb-0 p-0">Sigla</label>
+              <input type="text" class="form-control form-control-sm" name="sigla" value="" id="recipient-sigla-add" required>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-prot_nr-add" id="label-prot_nr-add" class="small-label is-required col-form-label col-md-12 mb-0 p-0">Nº do PROT</label>
+              <input type="text" class="form-control form-control-sm" name="prot_nr" value="" id="recipient-prot_nr-add" required>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-departamento-add" id="label-departamento-add" class="small-label is-required col-form-label col-md-12 mb-0 p-0">Depertamento Pai</label>
+              <select name="departamento" class="form-select form-select-sm" id="recipient-departamento_pai_id-add" required>
+                <option value=''>Selecione o Departamento Pai</option>
+                {{optionsDepartamento}}
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="button-add" name="button">Cadastrar Departamento</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var addModal = document.getElementById('addModal')
+    addModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+
+    var modalURL = addModal.querySelector('#urlAddDepartamentoBt')
+    var modalTitle = addModal.querySelector('#addModalLabel')
+    var modalNome = addModal.querySelector('#label-nome-add')
+    var modalDescricao = addModal.querySelector('#label-descricao-add')
+    var modalButton = addModal.querySelector('#button-add')
+
+    modalTitle.textContent = 'Cadastrar '+recipientTitle
+    modalNome.textContent = 'Nome d'+recipientTitlelow+':'
+    modalDescricao.textContent = 'Descrição d'+recipientTitlelow+':'
+    modalButton.textContent = 'Cadastrar '+recipientTitle
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/novo'
+    console.log(modalURL.action)
+
+  })
+</script>

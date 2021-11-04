@@ -1,0 +1,78 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="editModalLabel">Alterar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAltBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-id_tipodeservico" id="add-label-tipodeservico" class="col-form-label col-md-12 mb-0 p-0">Tipo de Serviço</label>
+              <select name="tipodeservico" required  class="form-select form-select-sm" id="recipient-tipodeservico">
+                <option value=''>Selecione o tipo de Serviço</option>
+                {{optionsTipodeservico}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-name" id="edit-label-nome" class="col-form-label col-md-12 mb-0 p-0"></label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id">
+              <input type="text" class="form-control" name="nome" value="" id="recipient-name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-descricao" id="edit-label-descricao" class="col-form-label col-md-12 mb-0 p-0"></label>
+              <textarea class="form-control" name="descricao" value="" id="recipient-descricao"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" name="button">Confirmar Alteração</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var editModal = document.getElementById('editModal')
+    editModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientId = button.getAttribute('data-bs-whatever-id')
+    var recipientNome = button.getAttribute('data-bs-whatever-nome')
+    var recipientDescricao = button.getAttribute('data-bs-whatever-descricao')
+    var recipientTipodeservico = button.getAttribute('data-bs-whatever-id_tipodeservico')
+
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalTitle = editModal.querySelector('.modal-title')
+    var modalURL = editModal.querySelector('#urlAltBt')
+    var modalIdInput = editModal.querySelector('#recipient-id')
+    var modalNomeInput = editModal.querySelector('#recipient-name')
+    var modalDescricaoInput = editModal.querySelector('#recipient-descricao')
+    var modalTipodeservicoInput = editModal.querySelector('#recipient-tipodeservico')
+
+
+    modalTitle.textContent = 'Alterar ' + recipientTitle
+    modalNomeInput.value = recipientNome
+    modalIdInput.value = recipientId
+    modalDescricaoInput.value = recipientDescricao
+    modalTipodeservicoInput.value = recipientTipodeservico
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/'+recipientId+'/edit'
+
+  })
+</script>

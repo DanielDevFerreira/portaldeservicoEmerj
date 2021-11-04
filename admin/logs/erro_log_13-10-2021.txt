@@ -1,0 +1,4 @@
+Erro: Código: 42S02 Mensagem: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'emerjco_portalservicos.tb_subsessao' doesn't exist em: 13-10-2021, 04:33:40
+Erro: Código: 23000 Mensagem: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_sessao' cannot be null em: 13-10-2021, 04:38:54
+Erro: Código: 23000 Mensagem: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_sessao' cannot be null em: 13-10-2021, 04:41:39
+Erro: Código: 42S22 Mensagem: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pagina' in 'where clause' em: 13-10-2021, 05:11:32

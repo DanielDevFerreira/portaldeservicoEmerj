@@ -1,0 +1,205 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="editModalLabel">Alterar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlItemdeconfBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="recipient-patrimonio_edit" class="small-label is-required col-form-label col-form col-md-12 mb-0 p-0">Patrimônio: </label>
+              <input type="hidden" class="form-control" name="id_edit" value="" id="recipient-id_edit">
+              <input type="text" class="form-control form-control-sm" name="patrimonio_edit" value="" id="recipient-patrimonio_edit">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-ndgtec_edit" class="small-label col-form-label col-md-12 mb-0 p-0">N.DGTEC: </label>
+                <input type="text" class="form-control form-control-sm" name="ndgtec_edit" value="" id="recipient-ndgtec_edit">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-tipodeic_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Tipo de Item: </label>
+              <select name="tipodeic_edit" required value="" class="form-select form-select-sm" id="recipient-tipodeic_edit">
+                <option value=''>Selecione o Tipo de Item</option>
+                {{optionsBuscaTipodeic}}
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-cod_itemdeconfiguracao_edit_dep" class="small-label col-form-label col-md-12 mb-0 p-0">Item de Configuração: </label>
+              <select name="itemdeconfiguracao_edit" value="" class="form-select form-select-sm" id="recipient-itemdeconfiguracao_edit">
+                <option value=''>Conectado à...</option>
+                {{optionsBuscaICs}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-nome_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Nome: </label>
+                <input type="text" required class="form-control form-control-sm" name="nome_edit" value="" id="recipient-nome_edit">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-localizacao_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Localização: </label>
+              <select name="localizacao_edit" value="" class="form-select form-select-sm" id="recipient-localizacao_edit">
+                <option value=''>Selecione a Localização</option>
+                {{optionsBuscaLocalizacao}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-descricao_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Descrição: </label>
+              <textarea class="form-control" name="descricao_edit" value="" id="recipient-descricao_edit"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-departamento_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Departamento: </label>
+              <select name="departamento_edit" required value="" class="form-select form-select-sm" id="recipient-departamento_edit">
+                <option value=''>Selecione o Departamento</option>
+                {{optionsBuscaDepartamento}}
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-usuario_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Usuário: </label>
+              <select name="usuario_edit" value="" class="form-select form-select-sm" id="recipient-usuario_edit">
+                <option value=''>Selecione o Usuário</option>
+                {{optionsBuscaUsuario}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="recipient-so_edit" class="small-label col-form-label col-md-12 mb-0 p-0">SO: </label>
+                <input type="text" class="form-control form-control-sm" name="so_edit" value="" id="recipient-so_edit">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="recipient-rede_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Rede: </label>
+                <input type="text" class="form-control form-control-sm" name="rede_edit" value="" id="recipient-rede_edit">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="recipient-office_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Office: </label>
+                <input type="text" class="form-control form-control-sm" name="office_edit" value="" id="recipient-office_edit">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="recipient-memoria_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Memória: </label>
+                <input type="text" class="form-control form-control-sm" name="memoria_edit" value="" id="recipient-memoria_edit">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="recipient-hardisc_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Hardisc: </label>
+                <input type="text" class="form-control form-control-sm" name="hardisc_edit" value="" id="recipient-hardisc_edit">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="recipient-monitor_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Monitor: </label>
+                <input type="text" class="form-control form-control-sm" name="monitor_edit" value="" id="recipient-monitor_edit">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="recipient-estabilizador_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Estabilizador: </label>
+                <input type="text" class="form-control form-control-sm" name="estabilizador_edit" value="" id="recipient-estabilizador_edit">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-obs_edit" class="small-label col-form-label col-md-12 mb-0 p-0">Obs: </label>
+              <textarea class="form-control" name="obs_edit" value="" id="recipient-obs_edit"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer col-md-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" name="button">Confirmar Alteração</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var editModal = document.getElementById('editModal')
+    editModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientId = button.getAttribute('data-bs-whatever-id')
+    var recipientNome = button.getAttribute('data-bs-whatever-nome')
+    var recipientDescricao = button.getAttribute('data-bs-whatever-descricao')
+    var recipientDepartamento = button.getAttribute('data-bs-whatever-departamento')
+    var recipientUsuario = button.getAttribute('data-bs-whatever-usuario')
+    var recipientLocalizacao = button.getAttribute('data-bs-whatever-localizacao')
+    var recipientTipodeic = button.getAttribute('data-bs-whatever-tipodeic')
+    var recipientItemdeconfiguracao = button.getAttribute('data-bs-whatever-itemdeconfiguracao')
+
+    var recipientPatrimonio = button.getAttribute('data-bs-whatever-patrimonio')
+    var recipientNdgtec = button.getAttribute('data-bs-whatever-ndgtec')
+    var recipientSo = button.getAttribute('data-bs-whatever-so')
+    var recipientRede = button.getAttribute('data-bs-whatever-rede')
+    var recipientOffice = button.getAttribute('data-bs-whatever-office')
+    var recipientMemoria = button.getAttribute('data-bs-whatever-memoria')
+    var recipientHardisc = button.getAttribute('data-bs-whatever-hardisc')
+    var recipientMonitor = button.getAttribute('data-bs-whatever-monitor')
+    var recipientEstabilizador = button.getAttribute('data-bs-whatever-estabilizador')
+    var recipientObs = button.getAttribute('data-bs-whatever-obs')
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalTitle = editModal.querySelector('.modal-title')
+    var modalURL = editModal.querySelector('#urlItemdeconfBt')
+    var modalIdInput = editModal.querySelector('#recipient-id_edit')
+    var modalNomeInput = editModal.querySelector('#recipient-nome_edit')
+    var modalDescricaoInput = editModal.querySelector('#recipient-descricao_edit')
+    var modalDepartamentoInput = editModal.querySelector('#recipient-departamento_edit')
+    var modalLocalizacaoInput = editModal.querySelector('#recipient-localizacao_edit')
+    var modalUsuarioInput = editModal.querySelector('#recipient-usuario_edit')
+    var modalTipodeicInput = editModal.querySelector('#recipient-tipodeic_edit')
+    var modalItemdeconfiguracaoInput = editModal.querySelector('#recipient-itemdeconfiguracao_edit')
+
+    var modalPatrimonioInput = editModal.querySelector('#recipient-patrimonio_edit')
+    var modalNdgtecInput = editModal.querySelector('#recipient-ndgtec_edit')
+    var modalSoInput = editModal.querySelector('#recipient-so_edit')
+    var modalRedeInput = editModal.querySelector('#recipient-rede_edit')
+    var modalOfficeInput = editModal.querySelector('#recipient-office_edit')
+    var modalMemoriaInput = editModal.querySelector('#recipient-memoria_edit')
+    var modalHardiscInput = editModal.querySelector('#recipient-hardisc_edit')
+    var modalMonitorInput = editModal.querySelector('#recipient-monitor_edit')
+    var modalEstabilizadorInput = editModal.querySelector('#recipient-estabilizador_edit')
+    var modalObsInput = editModal.querySelector('#recipient-obs_edit')
+
+    ///************************
+    //SE HOUVER DIVERGÊNCIAS DARÁ ERRO 405 MÉDOTO NÃO ENCONTRADO!!!!!!!!!!!!!!
+    ///************************
+
+    modalTitle.textContent = 'Alterar ' + recipientNome
+    modalIdInput.value = recipientId
+    modalNomeInput.value = recipientNome
+    modalIdInput.value = recipientId
+    modalDescricaoInput.value = recipientDescricao
+    modalDepartamentoInput.value = recipientDepartamento
+    modalLocalizacaoInput.value = recipientLocalizacao
+    modalUsuarioInput.value = recipientUsuario
+    modalTipodeicInput.value = recipientTipodeic
+    modalItemdeconfiguracaoInput.value = recipientItemdeconfiguracao
+
+    if (recipientPatrimonio == 'N/A') {
+      recipientPatrimonio = ''
+    }
+    if (recipientNdgtec == 'N/A') {
+      recipientNdgtec = ''
+    }
+
+    modalPatrimonioInput.value = recipientPatrimonio
+    modalNdgtecInput.value = recipientNdgtec
+    modalSoInput.value = recipientSo
+    modalRedeInput.value = recipientRede
+    modalOfficeInput.value = recipientOffice
+    modalMemoriaInput.value = recipientMemoria
+    modalHardiscInput.value = recipientHardisc
+    modalMonitorInput.value = recipientMonitor
+    modalEstabilizadorInput.value = recipientEstabilizador
+    modalObsInput.value = recipientObs
+
+    modalURL.action = recipientURL+'/admin/itensconfs/'+recipientId+'/edit'
+
+  })
+</script>

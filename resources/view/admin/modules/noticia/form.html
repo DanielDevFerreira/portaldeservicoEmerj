@@ -1,0 +1,217 @@
+<script src="https://cdn.tiny.cloud/1/yb4mitdczj2ekqcn3848rbqzuzmzzdmws49ai27ftig9epk9/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: "textarea#editor",
+    language: 'pt_BR',
+    skin: "bootstrap",
+    plugins: "lists, link, image, media, wordcount",
+    toolbar: "h1 h2 h3 bold italic underline | alignjustify alignleft aligncenter alignright | bullist numlist | link image | removeformat | wordcount",
+    menubar: false,
+    setup: (editor) => {
+      // Apply the focus effect
+      editor.on("init", () => {
+        editor.getContainer().style.transition =
+          "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out";
+      });
+      editor.on("focus", () => {
+        (editor.getContainer().style.boxShadow =
+          "0 0 0 .2rem rgba(0, 123, 255, .25)"),
+          (editor.getContainer().style.borderColor = "#80bdff");
+      });
+      editor.on("blur", () => {
+        (editor.getContainer().style.boxShadow = ""),
+          (editor.getContainer().style.borderColor = "");
+      });
+      editor.on("focusin", function(e) {
+        if ($(e.target).closest(".mce-window").length) {
+            e.stopImmediatePropagation();
+        }
+      });
+    },
+    });
+
+    $(document).ready(function(e){
+      let $uploadfile = $('#upload-section .upload-noticia-img input[type="file"]');
+      $uploadfile.change(function(){
+        readURL(this)
+      })
+    })
+
+    function readURL(input) {
+      if(input.files && input.files[0]){
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          $("#upload-section .upload-noticia-img .img").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+</script>
+<link rel="stylesheet" href="{{URL}}/resources/css/noticias.css">
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <h5 class="card-title"><i class="bi-{{icon}}" style="font-size: 2rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: dimgray;"></i>{{title}}</h5>
+  </div>
+  <div class="form-group col-md-6 d-flex justify-content-end" style="width:100%">
+      <a href="{{URL}}/admin/noticias">
+        <button type="button" name="button" class="btn btn-sm btn-outline-primary">Voltar</button>
+      </a>
+  </div>
+</div>
+{{status}}
+<form method="post" enctype="multipart/form-data">
+  <div class="col-lg-12" style="padding-top:8px;">
+    <div class="card">
+        <div class="card-header">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-nome-add" id="add-label-nome" class="col-form-label col-md-12 mb-0 p-0">Título d{{titlelow}}: </label>
+              <textarea name="noticia_titulo" required class="form-control form-control-sm" id="recipient-titulo">{{noticia_titulo}}</textarea>
+              <input type="hidden" name="id" value="{{noticia_id}}" id="recipient-id">
+              <input type="hidden" name="nome" value="{{noticia_nm}}" id="recipient-nome">
+              <input type="hidden" name="tipo" value="{{noticia_tipo}}" id="recipient-tipo">
+            </div>
+          </div>
+          <div class="form-row" id="upload-section" style="background-image: url({{URL}}/files/noticias/images/{{noticia_img}}); background-repeat: no-repeat; background-size: 25%; background-position: center;">
+            <div class="form-group col-md-12">
+              <div class="upload-noticia-img d-flex justify-content-center pb-1">
+                <div class="text-center">
+                  <div class="d-flex justify-content-center">
+                    <img src="{{URL}}/resources/icons/fonts/upload-icon-peq.png" style="width:200px; height:105px;" class="img" alt="Icone de imagem de upload">
+                  </div>
+                    <small class="form-text text-black-50">Escolha a imagem</small>
+                    <input type="file" class="form-control-file" name="noticiaUpload[]" id="upload-imagem">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="alt_img" id="label-altimg" class="col-form-label col-md-12 mb-0 p-0">Texto do alt da imagem: </label>
+              <input id="alt_img" required autocomplete="off" type="text" name="noticia_imgalt" value="{{noticia_imgalt}}" class="form-control form-control-sm" placeholder="Preencha com a descrição da imagem">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="tittle_img" id="label-tittle_img" class="col-form-label col-md-12 mb-0 p-0">Texto do título da imagem: </label>
+              <input id="tittle_img" required autocomplete="off" type="text" name="noticia_imgtittle" value="{{noticia_imgtittle}}" class="form-control form-control-sm" placeholder="Preencha com o título da imagem">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="editor" id="add-label-descricao" class="col-form-label col-md-12 mb-0 p-0">Conteúdo na notícia</label>
+                <textarea name="descricao" class="form-control form-control-sm" id="editor">{{descricao}}</textarea>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="recipient-datainicio-add" id="add-label-datainicio" class="col-form-label col-md-12 mb-0 p-0">Data início: </label>
+              <input id="recipient-datainicio-add" required autocomplete="off" type="text" value="{{datainicio}}" name="datainicio" class="form-control form-control-sm" placeholder="Informe a data início" data-orientation="top">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="recipient-datainicio-add" id="add-label-datainicio" class="col-form-label col-md-12 mb-0 p-0">Hora: </label>
+              <select name="horainicio" class="form-select form-select-sm" id="recipient-horainicio-add" required>
+                <option value='00'>00</option>
+                <option value='01'>01</option>
+                <option value='02'>02</option>
+                <option value='03'>03</option>
+                <option value='04'>04</option>
+                <option value='05'>05</option>
+                <option value='06'>06</option>
+                <option value='07'>07</option>
+                <option value='08'>08</option>
+                <option value='09'>09</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
+                <option value='15'>15</option>
+                <option value='16'>16</option>
+                <option value='17'>17</option>
+                <option value='18'>18</option>
+                <option value='19'>19</option>
+                <option value='20'>20</option>
+                <option value='21'>21</option>
+                <option value='22'>22</option>
+                <option value='23'>23</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="recipient-mininicio-add" id="add-label-mininicio" class="col-form-label col-md-12 mb-0 p-0">min: </label>
+              <select name="mininicio" class="form-select form-select-sm" id="recipient-mininicio-add" required>
+                <option value='00'>00</option>
+                <option value='15'>15</option>
+                <option value='30'>30</option>
+                <option value='45'>45</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="recipient-datafim-add" id="add-label-datafim" class="col-form-label col-md-12 mb-0 p-0">Data fim: </label>
+              <input id="recipient-datafim-add" required autocomplete="off" type="text"  value="{{datafim}}" name="datafim" class="form-control form-control-sm" placeholder="Informe a data fim" data-orientation="top">
+            </div>
+            <div class="form-group col-md-2">
+              <label for="recipient-horafim-add" id="add-label-horafim" class="col-form-label col-md-12 mb-0 p-0">Hora: </label>
+              <select name="horafim" class="form-select form-select-sm" id="recipient-horafim-add" required>
+                <option value='00'>00</option>
+                <option value='01'>01</option>
+                <option value='02'>02</option>
+                <option value='03'>03</option>
+                <option value='04'>04</option>
+                <option value='05'>05</option>
+                <option value='06'>06</option>
+                <option value='07'>07</option>
+                <option value='08'>08</option>
+                <option value='09'>09</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
+                <option value='15'>15</option>
+                <option value='16'>16</option>
+                <option value='17'>17</option>
+                <option value='18'>18</option>
+                <option value='19'>19</option>
+                <option value='20'>20</option>
+                <option value='21'>21</option>
+                <option value='22'>22</option>
+                <option value='23'>23</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="recipient-minfim-add" id="add-label-minfim" class="col-form-label col-md-12 mb-0 p-0">min: </label>
+              <select name="minfim" class="form-select form-select-sm" id="recipient-minfim-add" required>
+                <option value='00'>00</option>
+                <option value='15'>15</option>
+                <option value='30'>30</option>
+                <option value='45'>45</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12 d-flex justify-content-center">
+              <input type="hidden" name="id_usuario" value="{{id_usuario}}" id="recipient-usuario">
+              <button type="submit" class="btn btn-sm btn-primary">Cadastrar {{title}}</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+      $('#recipient-datainicio-add').datepicker({
+        language: 'pt-BR',
+        locale: 'pt-BR'
+      });
+    });
+
+    $(function () {
+      $('#recipient-datafim-add').datepicker({
+        language: 'pt-BR',
+        locale: 'pt-BR'
+      });
+    });
+  </script>

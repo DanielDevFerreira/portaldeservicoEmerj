@@ -1,0 +1,18 @@
+<div class="form-row">
+  <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+      <div id="drag_upload_file">
+          <p>Arraste o arquivo da imagem da notícia para esta área. (1200px)</p>
+          <p>ou</p>
+          <p><input type="button" value="Ou clique aqui para escolher o arquivo da imagem." onclick="file_explorer();" /></p>
+          <input class="form-control form-control-sm mb-0 p-1" accept="image/jpg,image/jpeg" type="file" id="selectfile" multiple />
+      </div>
+  </div>
+  <div class="form-group col-md-12">
+    <!-- DIV responsável por montar a lista de arqrivos do UPLOAD -->
+      <div class="d-grid gap-2 pt-3" id="arquivos_de_envio"></div>
+    <!-- FIM da DIV responsável por montar a lista de arqrivos do UPLOAD -->
+  </div>
+</div>
+
+
+<script type="text/javascript" src="{{URL}}/resources/js/custom.js"></script>

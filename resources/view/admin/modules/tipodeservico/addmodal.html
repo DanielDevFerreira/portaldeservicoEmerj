@@ -1,0 +1,59 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="add-label-title">Cadastrar {{title}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAddBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-name" id="add-label-nome" class="col-form-label col-md-12 mb-0 p-0">Nome {{title}}: </label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id-add">
+              <input type="text" class="form-control" name="nome" value="" id="recipient-name-add">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-descricao" id="add-label-descricao" class="col-form-label col-md-12 mb-0 p-0">Descrição de : </label>
+              <textarea class="form-control" name="descricao" value="" id="recipient-descricao-add"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="add-button" name="button">Cadastrar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var addModal = document.getElementById('addModal')
+    addModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+
+    var modalURL = addModal.querySelector('#urlAddBt')
+    var modalTitle = addModal.querySelector('#add-label-title')
+    var modalNome = addModal.querySelector('#add-label-nome')
+    var modalDescricao = addModal.querySelector('#add-label-descricao')
+    var modalButton = addModal.querySelector('#add-button')
+
+    modalTitle.textContent = 'Cadastrar '+recipientTitle
+    modalNome.textContent = 'Nome d'+recipientTitlelow+':'
+    modalDescricao.textContent = 'Descrição d'+recipientTitlelow+':'
+    modalButton.textContent = 'Cadastrar '+recipientTitle
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/novo'
+
+  })
+</script>

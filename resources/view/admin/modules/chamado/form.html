@@ -1,0 +1,394 @@
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <h5 class="card-title">{{title}}</h5>
+  </div>
+  <div class="form-group col-md-6 d-flex justify-content-end" style="width:100%">
+      <a href="{{URL}}/admin/chamados">
+        <button type="button" name="button" class="btn btn-sm btn-outline-primary">Voltar</button>
+      </a>
+  </div>
+</div>
+{{status}}
+<form method="post" enctype="multipart/form-data">
+<div class="col-lg-12" style="padding-top:8px;">
+   <div class="card">
+        <div class="card-header">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Dados do Requisitante  </label>
+                <input type="text" name="nome_usuario" maxlength="40" value="{{nome}}" required  class="form-control form-control-sm" disabled>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">E-mail:</label>
+                <input type="text" name="email_usuario" maxlength="40" value="{{email}}" required  class="form-control form-control-sm" disabled>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Departamento:</label>
+                <input type="text" name="departamento_usuario_logado_id" maxlength="2" value="{{departamento_id}}" id="departamento_usuario_logado_id"  class="form-control form-control-sm" disabled>
+                <input type="text" name="departamento_usuario" maxlength="40" value="{{usuariodepartamento}}" required  class="form-control form-control-sm" disabled>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Sala:</label>
+                <input type="text" name="sala_usuario_logado_id" maxlength="2" value="{{salaid}}" id="sala_usuario_logado_id"  class="form-control form-control-sm" disabled>
+                <input type="text" name="sala" id="sala_usuario_logado" maxlength="40" value="{{sala}}" required  class="form-control form-control-sm" disabled>
+                <input type="text" name="id_usuario" id="id_usuario" maxlength="40" value="{{usuario}}" required  class="form-control form-control-sm">
+                <input type="hidden" name="departamento" id="departamento" value="{{departamento_id}}">
+            </div>
+          </div>
+          <div class="form-row" id="container-usuario-contato">
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Informe o e-mail do Contato</label>
+              <select name="id_contato" value="" id="idcontato" class="form-select form-select-sm">
+                <!--onchange="javascript:location.href='{{uri}}&idcontato='+document.getElementById('idcontato').value;"-->
+                <option value=''>Informe o e-mail</option>
+                {{optionsUsuario}}
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Nome:</label>
+                <input type="text" name="nome_contato" id="nome_contato" maxlength="40" value="" class="form-control form-control-sm" disabled>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Departamento:</label>
+                <input type="text" name="departamento_contato_id" id="departamento_contato_id" maxlength="2" value="" class="form-control form-control-sm" disabled>
+                <input type="text" name="departamento_contato" id="departamento_contato" maxlength="40" value="" class="form-control form-control-sm" disabled>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Sala:</label>
+                <input type="text" name="email_contato" id="emailcontato" maxlength="80" value="" class="form-control form-control-sm">
+                <input type="text" name="sala_contato_id" id="sala_contato_id" maxlength="2" value="" class="form-control form-control-sm" disabled>
+                <input type="text" name="sala_contato" id="sala_contato" maxlength="40" value=""  class="form-control form-control-sm" disabled>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              O atendimento deste chamado é para você mesmo ou para outra pessoa?
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="action-btn-b">
+                <label class="custom-control-label" for="action-btn-b">Chamado para outra pessoa.</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row hide" id="container-b">
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Informe o e-mail</label>
+              <select name="id_atendimento" id="idatendimento" value="" class="form-select form-select-sm">
+                <!--onchange="javascript:location.href='{{uri}}&idatendimento='+document.getElementById('idatendimento').value;-->
+                <option value=''>Informe o e-mail</option>
+                {{optionsUsuario}}
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Nome:</label>
+                <input type="text" name="nome_atendimento" id="nome_atendimento" maxlength="40" value=""  class="form-control form-control-sm" disabled>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Departamento:</label>
+                <input type="text" name="departamento_atendimento_id" id="departamento_atendimento_id" maxlength="2" value="" class="form-control form-control-sm" disabled>
+                <input type="text" name="departamento_atendimento" id="departamento_atendimento" maxlength="40" value=""  class="form-control form-control-sm" disabled>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="small-label is-required col-md-12 mb-0 p-0">Sala:</label>
+                <input type="text" name="email_atendimento" id="emailatendimento" maxlength="70" value=""  class="form-control form-control-sm">
+                <input type="text" name="sala_atendimento_id" id="sala_atendimento_id" maxlength="2" value="" class="form-control form-control-sm" disabled>
+                <input type="text" name="sala_atendimento" id="sala_atendimento" maxlength="40" value=""  class="form-control form-control-sm" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="form-row">
+            <div class="form-group text-center col-md-12">
+              Necessito de atendimento para:
+              <hr>
+              {{optionsCategoriadeic}}
+            </div>
+          </div>
+          <div class="escolha hide">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="tipodeic" id="label-tipodeic" class="small-label is-required col-md-12 mb-0 p-0"></label>
+                  <select name="tipodeic" id="tipodeic" required class="form-select form-select-sm">
+                    <option value=''>Selecione.</option>
+                  </select>
+              </div>
+              <div class="form-group col-md-6">
+                    <label for="servico" id="label-servico" class="small-label is-required col-md-12 mb-0 p-0">Selecione qual serviço deseja para este chamado:</label>
+                    <select name="servico" id="servico" required class="form-select form-select-sm">
+                      <option value=''>Selecione.</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group text-center col-md-12">
+                <label for="itemdeconfiguracao"  id="label-itemdeconfiguracao" class="small-label is-required col-md-12 mb-0 p-0" for="">Selecione o(s) item(ns) abaixo para o(s) qual(is) você deseja atendimento:</label><br>
+                <div class="btn btn-toggle" id="itemdeconfiguracao" data-toggle="buttons"></div>
+              </div>
+            </div>
+          </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="" class="small-label is-required col-md-12 mb-0 p-0">Descreva sua solicitação:</label>
+                    <textarea class="form-control" name="descricao" required value="" id="recipient-descricao"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12 hide">
+                <br>
+                  <div class="mb-3">
+                    <label for="" class="form-label small-label col-md-12 mb-0 p-0">Caso necessário, escolha um ou mais arquivos que deseja anexar para auxiliar neste atendimento:</label>
+                    <input class="form-control form-control-sm mb-0 p-1" accept=".doc,.docx,application/msword,application/pdf,application/msexcel,application/x-zip-compressed,application/rtf,image/jpg,image/jpeg,image/png" name="arquivo[]" type="file" id="" multiple value="">
+                  </div>
+              </div>
+              <div id="drop_file_zone" ondrop="upload_file(event)" ondragover="return false">
+                  <div id="drag_upload_file">
+                      <p>Arraste o(s) arquivo(s) para esta área</p>
+                      <p>ou</p>
+                      <p><input type="button" value="Clique aqui para escolher o(s) arquivo(s)" onclick="file_explorer();" /></p>
+                      <input class="form-control form-control-sm mb-0 p-1" accept=".doc,.docx,.xls,.xlsx,application/msword,application/pdf,application/msexcel,application/x-zip-compressed,application/rtf,image/jpg,image/jpeg,image/png" type="file" id="selectfile" multiple />
+                  </div>
+              </div>
+              <div class="form-group col-md-12">
+                <!-- DIV responsável por montar a lista de arqrivos do UPLOAD -->
+                  <div class="d-grid gap-2 pt-3" id="arquivos_de_envio"></div>
+                <!-- FIM da DIV responsável por montar a lista de arqrivos do UPLOAD -->
+              </div>
+              <div class="col-lg-12">
+                <label class="small-label col-md-12 mb-0 p-0">Descreva, caso necessário, uma observação:</label>
+                  <input type="text" name="chamado_nm" id="recipient-chamado_nm" value="">
+                  <input type="text" name="itens_checados" id="recipient-itens_checados" value="">
+                  <input type="text" name="sala_item_checado" id="recipient-sala-item-checado" value="">
+                  <input type="text" name="departamento_item_checado" id="recipient-departamento-item-checado" value="">
+                  <input type="text" name="chamado_obs" maxlength="255" value="{{chamadoObs}}"  class="form-control form-control-sm">
+              </div>
+            </div>
+        </div>
+        <div class="form-group col-md-12 d-flex justify-content-center">
+          <button type="submit" class="btn btn-sm btn-primary" style="width:300px;">{{title}}</button>
+        </div>
+    </div>
+</div>
+</form>
+<script type="text/javascript" src="{{URL}}/resources/js/custom.js"></script>
+<script type="text/javascript">
+
+  $('#action-btn-b').click(function(e){
+     if($('#action-btn-b').is(':checked')){
+          console.log("on");
+          $('#container-b').removeClass('hide');
+     } else {
+         console.log("off");
+         $('#container-b').addClass('hide');
+         zeraUsuarioAtendimento();
+         validaUsuario();
+     }
+  })
+
+  function zeraUsuarioContato(){
+    zeraUsuarioAtendimento();
+    $('#nome_contato').val(null);
+    $('#emailcontato').val(null);
+    $('#departamento_contato_id').val(null);
+    $('#departamento_contato').val(null);
+    $('#sala_contato_id').val(null);
+    $('#sala_contato').val(null);
+    validaUsuario();
+  }
+  function zeraUsuarioAtendimento(){
+    //document.getElementById("action-btn-b").classList.toggle("hide");
+    $('idatendimento option:eq(1)');
+    $('#idatendimento option:eq(1)').prop('selected', true);
+    $('#idatendimento').val('25');
+    $('#nome_atendimento').val(null);
+    $('#emailatendimento').val(null);
+    $('#departamento_atendimento_id').val(null);
+    $('#departamento_atendimento').val(null);
+    $('#sala_atendimento_id').val(null);
+    $('#sala_atendimento').val(null);
+    $('#idatendimento').select2();
+  }
+
+  $(document).ready(function() {
+      $('#idcontato').select2();
+      $('#idatendimento').select2();
+  });
+
+  function validaUsuario(){
+    if($('#departamento_atendimento_id').val()){
+      $('#recipient-sala-item-checado').val($('#sala_atendimento_id').val());
+      $('#recipient-departamento-item-checado').val($('#departamento_atendimento_id').val());
+      console.log('USUÁRIO DE ATENDIMENTO = '+$('#departamento_atendimento_id').val());
+    } else {
+      if($('#departamento_contato_id').val()){
+        $('#recipient-sala-item-checado').val($('#sala_contato_id').val());
+        $('#recipient-departamento-item-checado').val($('#departamento_contato_id').val());
+        console.log('USUÁRIO DE CONTANTO = '+$('#departamento_contato_id').val());
+      } else {
+        $('#recipient-sala-item-checado').val($('#sala_usuario_logado_id').val());
+        $('#recipient-departamento-item-checado').val($('#departamento_usuario_logado_id').val());
+        console.log('APENAS USUÁRIO DE LOGADO = '+$('#sala_usuario_logado_id').val());
+      }
+    }
+    listaICs();
+  }
+
+  $(function(){
+    $(".categoriadeic").click(function () {
+      id = $("input[type=radio][name='categoriadeic']:checked").val();
+      if( $(this).val() ) {
+        $('#tipodeic').hide();
+        $('#servico').hide();
+        $('#label-servico').hide();
+        $('#itemdeconfiguracao').hide();
+        $('#label-itemdeconfiguracao').hide();
+        $('#recipient-chamado_nm').val('');
+        $('#recipient-itens_checados').val('');
+        $('.carregando').show();
+          $.getJSON('jsoncategoria?',{categoriadeic: $(this).val(), ajax: 'true'}, function(j){
+						var options = '<option value="">Selecione o tipo de item</option>';
+						for (var i = 0; i < j.length; i++) {
+							options += '<option value="' + j[i].id + '">' + j[i].tipodeic_nm + '</option>';
+						}
+						$('#tipodeic').html(options).show();
+						$('.carregando').hide();
+					});
+      } else {
+        $('#tipodeic').html('<option value="">Selecione o tipo de item</option>');
+      }
+    });
+    // JSON PARA RETORNAR DADOS (Nome,Departamento[SIGLA;ID],Localização[NOME;ID]) DO USUÁRIO POR E-MAIL
+    $("#idcontato").change(function() {
+      if( $(this).val() ) {
+          $.getJSON('jsonusuarioporid?',{id: $(this).val(), ajax: 'true'}, function(j){
+            //console.log('nome_contato = '+j[0].nome_contato);
+            $('#nome_contato').val(j[0].nome_contato);
+            $('#emailcontato').val(j[0].email_contato);
+            $('#departamento_contato_id').val(j[0].departamento_id);
+            $('#departamento_contato').val(j[0].departamento_nm);
+            $('#sala_contato_id').val(j[0].localizacao_id);
+            $('#sala_contato').val(j[0].localizacao_nm);
+            $('#recipient-sala-item-checado').val(j[0].localizacao_id);
+            $('#recipient-departamento-item-checado').val(j[0].departamento_id);
+            validaUsuario();
+				});
+      } else {
+        zeraUsuarioContato();
+      }
+
+    });
+    // JSON PARA RETORNAR DADOS (Nome,Departamento[SIGLA;ID],Localização[NOME;ID]) DO USUÁRIO POR E-MAIL
+    $("#idatendimento").change(function() {
+      if( $(this).val() ) {
+
+          $.getJSON('jsonusuarioporid?',{id: $(this).val(), ajax: 'true'}, function(j){
+            //console.log('nome_contato = '+j[0].nome_contato);
+            $('#nome_atendimento').val(j[0].nome_contato);
+            $('#emailatendimento').val(j[0].email_contato);
+            $('#departamento_atendimento_id').val(j[0].departamento_id);
+            $('#departamento_atendimento').val(j[0].departamento_nm);
+            $('#sala_atendimento_id').val(j[0].localizacao_id);
+            $('#sala_atendimento').val(j[0].localizacao_nm);
+            $('#recipient-sala-item-checado').val(j[0].localizacao_id);
+            $('#recipient-departamento-item-checado').val(j[0].departamento_id);
+            validaUsuario();
+        });
+      } else {
+        zeraUsuarioAtendimento();
+      }
+
+    });
+    $("#tipodeic").change(function() {
+      if( $(this).val() ) {
+        $('#servico').hide();
+        $('#label-servico').hide();
+        $('#itemdeconfiguracao').hide();
+        $('#label-itemdeconfiguracao').hide();
+        $('#recipient-chamado_nm').val('');
+        $('#recipient-itens_checados').val('');
+        $('.carregando').show();
+            $.getJSON('jsonservico?',{tipodeic: $(this).val(), ajax: 'true'}, function(j){
+						var options = '<option value="">Selecione o serviço</option>';
+						for (var i = 0; i < j.length; i++) {
+							options += '<option value="' + j[i].id + '">' + j[i].servico_nm + '</option>';
+						}
+						$('#servico').html(options).show();
+            $('.carregando').hide();
+            $('#label-servico').show();
+					});
+      } else {
+        $('#servico').hide();
+        $('#label-servico').hide();
+        $('#itemdeconfiguracao').hide();
+        $('#label-itemdeconfiguracao').hide();
+      }
+    });
+
+    $("#servico").change(function() {
+      if( $(this).val() ) {
+        $('#itemdeconfiguracao').hide();
+        $('#label-itemdeconfiguracao').hide();
+        $('.carregando').show();
+            listaICs();
+
+            } else {
+              $('#itemdeconfiguracao').hide();
+              $('#label-itemdeconfiguracao').hide();
+            }
+          });
+      });
+
+  $(document).ready(function() {
+        $("#itemdeconfiguracao").click(function(e) {
+            var checados = [];
+            $.each($("input[name='optionsIC[]']:checked"), function(){
+                checados.push($(this).parent().text());
+            });
+            $('#recipient-itens_checados').val(checados.join(", "));
+        });
+    });
+
+    function listaICs() {
+      var sala = $('#recipient-sala-item-checado').val();
+      var tipo = $('#tipodeic').val();
+      var serv = $("#servico").val();
+      var depart = $('#recipient-departamento-item-checado').val();
+
+      if(sala && tipo && serv)  {
+          console.log('dep = '+depart+' sala = '+sala+' tipo = '+tipo+' serv = '+serv);
+          //$('#departamento').val() RETIRADO E VALOR 5 (DETEC) FORÇADO PARA TESTES
+          $.getJSON('jsonics?',{servico: serv, tipodeic: tipo, departatendido: depart, departamento: 5, sala: sala, ajax: 'true'}, function(j){
+          var options = '';
+          for (var i = 0; i < j.length; i++) {
+            options += '<label class="btn btn-sm btn-outline-primary" for="option' + j[i].id + '" tabindex="0" role="button" data-bs-toggle="popover" title="' + j[i].descricao + '"  data-bs-placement="bottom" data-bs-trigger="hover" data-bs-content="' + j[i].descricao + '"><input type="checkbox" value="' + j[i].id + '" name="optionsIC[]" id="option' + j[i].id + '" class="btn-check" autocomplete="off" />' + j[i].itemdeconf_nm + '</label>&nbsp';
+          }
+          $('#itemdeconfiguracao').html(options).show();
+          $('.carregando').hide();
+          $('#label-itemdeconfiguracao').show();
+          $('#recipient-chamado_nm').val('Solicitação para '+$('#servico :selected').text()+': '+$('#tipodeic :selected').text());
+          });
+      }
+    }
+
+  function show2(ev2) {
+
+    var rowescolha = document.querySelector('.escolha');
+    var srt = '';
+
+    if (ev2 == 'categoriadeic3') {
+      rowescolha.style.display = "none";
+    } else {
+      rowescolha.style.display = "block";
+      if (ev2 == 'categoriadeic2') {
+        srt = 'sistema/aplicativo';
+      }
+      if (ev2 == 'categoriadeic1') {
+        srt = 'equipamento';
+      }
+      document.getElementById('label-tipodeic').textContent = 'Selecione o '+srt+':';
+
+    }
+  }
+
+
+  validaUsuario();
+
+</script>

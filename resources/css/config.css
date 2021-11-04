@@ -1,0 +1,15 @@
+:root{
+  --primary: #0c354b !important;
+  --primary-dark: #05151e !important;
+  --primary-light: #637d8b !important;
+  --primary-superlight: #b1bec5 !important;
+  --primary-maxlight: #dae0e3 !important;
+  --secondary: #b68f61 !important;
+  --secondary-dark: #58452f !important;
+  --secondary-light: #D2C4B3 !important;
+  --secondary-superlight: #f0e9df !important;
+  --secondary-maxlight: #f0e9df !important;
+  --light: #8f969a;
+  --medium: #5f686d;
+  --dark: #13181a;
+  }

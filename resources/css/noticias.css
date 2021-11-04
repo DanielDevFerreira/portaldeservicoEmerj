@@ -1,0 +1,33 @@
+#upload-section {
+  padding: 2px 0;
+}
+
+#upload-section .upload-noticia-img {
+  position: relative;
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: filter .7s ease;
+}
+
+#upload-section .upload-noticia-img:hover{
+  filter: drop-shadow(1px 1px 12px #7584bb);
+}
+
+#upload-imagem {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  width: 200px;
+  margin-top: 0px;
+  opacity: 100;
+}
+
+#upload-imagem::before{
+  content: '';
+  display: inline-block;
+  width: 200px;
+  height: 105px;
+  cursor: pointer;
+  border-radius: 50%;
+}

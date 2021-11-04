@@ -1,0 +1,36 @@
+***Saída:***
+Use a instrução LOCK TABLES
+Guarda resultado para um ficheiro
+
+***Opções específicas do formato:***
+Mostrar comentários
+Encapsular exportação numa transação
+Desativar verificação de chaves estrangeiras
+
+***Opções de criação de objetos***
+Adicionar declaração CREATE DATABASE / USE
+Adicionar declaração DROP TABLE / VIEW / PROCEDURE / FUNCTION / EVENT / TRIGGER
+IF NOT EXISTS (menos eficiente pois os índices serão gerados durante a criação da tabela)
+Valor de AUTO_INCREMENT
+Envolver nomes de tabela e colunas com crases (Protege os nomes de colunas e tabelas formados com caracteres especiais ou palavras chaves)
+
+***Opções de criação de dados***
+Truncar tabela antes do insert
+
+ambos acima
+      Exemplo: INSERT INTO tbl_name (col_A,col_B,col_C) VALUES (1,2,3), (4,5,6), (7,8,9)
+
+Despejar colunas binárias em notação hexadecimal (por exemplo, "abc" seria 0x616263)
+Descarregar colunas com TIMESTAMP em UTC (possibilita que as colunas TIMESTAMP sejam descarregadas e carregadas entre servidores em diferentes zonas horárias)
+
+
+PHPMailer******************
+//https://accounts.google.com/b/0/DisplayUnlockCaptcha
+
+
+
+SENHA app.sendgrid.com
+F4SdeP8HgjP1nbV4Q23GhytF8
+
+
+

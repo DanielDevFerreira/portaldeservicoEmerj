@@ -1,0 +1,114 @@
+body,
+html{
+/*font-family: 'Roboto', sans-serif;
+font-family: "Montserrat", sans-serif;
+background-color: #fff;*/
+}
+#menu-principal {
+--padding-top: 70px;
+width: 100%;
+font-size: 14px;
+--box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.2);
+}
+#menu-principal .navbar-collapse {
+width: auto;
+}
+
+
+
+#menu-principal .navbar-nav {
+width: 100%;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+
+
+#menu-principal .dropdown-menu {
+box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+z-index: 100;
+}
+
+
+
+#menu-principal .nav-link {
+text-transform: uppercase;
+font-weight: 600;
+padding-left: 0px;
+padding-right: 0px;
+--border-bottom: solid 2px transparent;
+--color: var(--primary) !important;
+}
+
+
+#menu-principal .nav-link:hover {
+--border-bottom: solid 2px var(--primary-light);
+color: var(--secondary-light) !important;
+}
+
+.texto-nav-link-ativo {
+color: var(--secondary-light) !important;
+font-weight: 600;
+}
+
+.wm-copyright {
+background-color: var(--primary) !important;
+color: #fff;
+float: left;
+width: 100%;
+padding: 35px 0px 32px 0px;
+}
+
+
+.texto-menu-lateral-ativo {
+color: var(--primary-dark) !important;
+font-weight: 600;
+}
+
+
+#conteudo-home {
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+#conteudo-menu {
+  padding-bottom: 30px;
+}
+
+
+
+#destaque-capa-revista {
+background-color: var(--secondary);
+padding-left: 0px;
+padding-right: 0px;
+font-size: 14px;
+margin-bottom: 4px;
+color: #fff;
+
+
+
+}
+#destaque-capa-biblioteca {
+background-color: var(--primary);
+padding-left: 0px;
+padding-right: 0px;
+margin-top: 4px;
+font-size: 14px;
+color: #fff;
+}
+
+
+
+#card-title-destaque-capa-revista {
+font-size: 16px;
+}
+
+
+
+#card-title-destaque-capa-biblioteca{
+font-size: 16px;
+color: #fff;
+
+
+
+}

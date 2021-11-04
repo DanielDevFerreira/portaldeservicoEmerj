@@ -1,0 +1,242 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-zoom-in" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="add-label-title">Detalhes do Chamado</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!--  -->
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6" id="delail_titulo"></div>
+          <div class="col-sm-6" id="delail_data_abertuta"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1" id="delail_UsuarioContatoId"></div>
+          <div class="col-sm-4" id="delail_UsuarioContatoNome"></div>
+          <div class="col-sm-3" id="delail_UsuarioContatoEmail"></div>
+          <div class="col-sm-2" id="delail_UsuarioContatoTelefone"></div>
+          <div class="col-sm-1" id="delail_UsuarioContatoSiglaDep"></div>
+          <div class="col-sm-1" id="delail_UsuarioContatoSala"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" id="delail_descricao"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1" id="delail_UsuarioSolicitanteId"></div>
+          <div class="col-sm-4" id="delail_UsuarioSolicitanteNome"></div>
+          <div class="col-sm-3" id="delail_UsuarioSolicitanteEmail"></div>
+          <div class="col-sm-2" id="delail_UsuarioSolicitanteTelefone"></div>
+          <div class="col-sm-1" id="delail_UsuarioSolicitanteSiglaDep"></div>
+          <div class="col-sm-1" id="delail_UsuarioSolicitanteSala"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1" id="delail_UsuarioAtendidoId"></div>
+          <div class="col-sm-4" id="delail_UsuarioAtendidoNome"></div>
+          <div class="col-sm-3" id="delail_UsuarioAtendidoEmail"></div>
+          <div class="col-sm-2" id="delail_UsuarioAtendidoTelefone"></div>
+          <div class="col-sm-1" id="delail_UsuarioAtendidoSiglaDep"></div>
+          <div class="col-sm-1" id="delail_UsuarioAtendidoSala"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1" id="delail_UsuarioAutorizadorId"></div>
+          <div class="col-sm-4" id="delail_UsuarioAutorizadorNome"></div>
+          <div class="col-sm-3" id="delail_UsuarioAutorizadorEmail"></div>
+          <div class="col-sm-2" id="delail_UsuarioAutorizadorTelefone"></div>
+          <div class="col-sm-1" id="delail_UsuarioAutorizadorSiglaDep"></div>
+          <div class="col-sm-1" id="delail_UsuarioAutorizadorSala"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-1" id="delail_UsuarioAtendenteId"></div>
+          <div class="col-sm-4" id="delail_UsuarioAtendenteNome"></div>
+          <div class="col-sm-3" id="delail_UsuarioAtendenteEmail"></div>
+          <div class="col-sm-2" id="delail_UsuarioAtendenteTelefone"></div>
+          <div class="col-sm-1" id="delail_UsuarioAtendenteSiglaDep"></div>
+          <div class="col-sm-1" id="delail_UsuarioAtendenteSala"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4" id="delail_dataAtendimento"></div>
+          <div class="col-sm-4" id="delail_nrSolicitacao"></div>
+          <div class="col-sm-4" id="delail_nrRequisicao"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12" id="delail_chamadoObs"></div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4" id="delail_idStatus"></div>
+          <div class="col-sm-4" id="delail_idChamadoPai"></div>
+          <div class="col-sm-4" id="delail_statusdoatendimento"></div>
+        </div>
+
+      </div>
+      <!--  -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var detailModal = document.getElementById('detailModal')
+    detailModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientURI = button.getAttribute('data-bs-whatever-uri')
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+
+    var recipientId = button.getAttribute('data-bs-whatever-id')
+    var recipientTitulo = button.getAttribute('data-bs-whatever-titulo')
+    var recipientDescricao = button.getAttribute('data-bs-whatever-descricao')
+    var recipientDataAbertura = button.getAttribute('data-bs-whatever-data_abertuta')
+
+    var recipientUsuarioContatoId = button.getAttribute('data-bs-whatever-UsuarioContatoId')
+    var recipientUsuarioContatoNome = button.getAttribute('data-bs-whatever-UsuarioContatoNome')
+    var recipientUsuarioContatoEmail = button.getAttribute('data-bs-whatever-UsuarioContatoEmail')
+    var recipientUsuarioContatoTelefone = button.getAttribute('data-bs-whatever-UsuarioContatoTelefone')
+    var recipientUsuarioContatoSiglaDep = button.getAttribute('data-bs-whatever-UsuarioContatoSiglaDep')
+    var recipientUsuarioContatoSala = button.getAttribute('data-bs-whatever-UsuarioContatoSala')
+
+    var recipientUsuarioSolicitanteId = button.getAttribute('data-bs-whatever-UsuarioSolicitanteId')
+    var recipientUsuarioSolicitanteNome = button.getAttribute('data-bs-whatever-UsuarioSolicitanteNome')
+    var recipientUsuarioSolicitanteEmail = button.getAttribute('data-bs-whatever-UsuarioSolicitanteEmail')
+    var recipientUsuarioSolicitanteTelefone = button.getAttribute('data-bs-whatever-UsuarioSolicitanteTelefone')
+    var recipientUsuarioSolicitanteSiglaDep = button.getAttribute('data-bs-whatever-UsuarioSolicitanteSiglaDep')
+    var recipientUsuarioSolicitanteSala = button.getAttribute('data-bs-whatever-UsuarioSolicitanteSala')
+
+    var recipientUsuarioAtendidoId = button.getAttribute('data-bs-whatever-UsuarioAtendidoId')
+    var recipientUsuarioAtendidoNome = button.getAttribute('data-bs-whatever-UsuarioAtendidoNome')
+    var recipientUsuarioAtendidoEmail = button.getAttribute('data-bs-whatever-UsuarioAtendidoEmail')
+    var recipientUsuarioAtendidoTelefone = button.getAttribute('data-bs-whatever-UsuarioAtendidoTelefone')
+    var recipientUsuarioAtendidoSiglaDep = button.getAttribute('data-bs-whatever-UsuarioAtendidoSiglaDep')
+    var recipientUsuarioAtendidoSala = button.getAttribute('data-bs-whatever-UsuarioAtendidoSala')
+
+    var recipientUsuarioAutorizadorId = button.getAttribute('data-bs-whatever-UsuarioAutorizadorId')
+    var recipientUsuarioAutorizadorNome = button.getAttribute('data-bs-whatever-UsuarioAutorizadorNome')
+    var recipientUsuarioAutorizadorEmail = button.getAttribute('data-bs-whatever-UsuarioAutorizadorEmail')
+    var recipientUsuarioAutorizadorTelefone = button.getAttribute('data-bs-whatever-UsuarioAutorizadorTelefone')
+    var recipientUsuarioAutorizadorSiglaDep = button.getAttribute('data-bs-whatever-UsuarioAutorizadorSiglaDep')
+    var recipientUsuarioAutorizadorSala = button.getAttribute('data-bs-whatever-UsuarioAutorizadorSala')
+
+    var recipientUsuarioAtendenteId = button.getAttribute('data-bs-whatever-UsuarioAtendenteId')
+    var recipientUsuarioAtendenteNome = button.getAttribute('data-bs-whatever-UsuarioAtendenteNome')
+    var recipientUsuarioAtendenteEmail = button.getAttribute('data-bs-whatever-UsuarioAtendenteEmail')
+    var recipientUsuarioAtendenteTelefone = button.getAttribute('data-bs-whatever-UsuarioAtendenteTelefone')
+    var recipientUsuarioAtendenteSiglaDep = button.getAttribute('data-bs-whatever-UsuarioAtendenteSiglaDep')
+    var recipientUsuarioAtendenteSala = button.getAttribute('data-bs-whatever-UsuarioAtendenteSala')
+
+    var recipientdataAtendimento = button.getAttribute('data-bs-whatever-dataAtendimento')
+    var recipientnrSolicitacao = button.getAttribute('data-bs-whatever-nrSolicitacao')
+    var recipientnrRequisicao = button.getAttribute('data-bs-whatever-nrRequisicao')
+    var recipientchamadoObs = button.getAttribute('data-bs-whatever-chamadoObs')
+    var recipientidStatus = button.getAttribute('data-bs-whatever-idStatus')
+    var recipientidChamadoPai = button.getAttribute('data-bs-whatever-idChamadoPai')
+    var recipientstatusdoatendimento = button.getAttribute('data-bs-whatever-statusdoatendimento')
+
+    var modalURL = detailModal.querySelector('#urlAddBt')
+    var modalTitle = detailModal.querySelector('#add-label-title')
+    var modalTitulo = detailModal.querySelector('#delail_titulo')
+    var modalDescricao = detailModal.querySelector('#delail_descricao')
+    var modalDataAbertura = detailModal.querySelector('#delail_data_abertuta')
+
+    var modalUsuarioContatoId = detailModal.querySelector('#delail_UsuarioContatoId')
+    var modalUsuarioContatoNome = detailModal.querySelector('#delail_UsuarioContatoNome')
+    var modalUsuarioContatoEmail = detailModal.querySelector('#delail_UsuarioContatoEmail')
+    var modalUsuarioContatoTelefone = detailModal.querySelector('#delail_UsuarioContatoTelefone')
+    var modalUsuarioContatoSiglaDep = detailModal.querySelector('#delail_UsuarioContatoSiglaDep')
+    var modalUsuarioContatoSala = detailModal.querySelector('#delail_UsuarioContatoSala')
+
+    var modalUsuarioSolicitanteId = detailModal.querySelector('#delail_UsuarioSolicitanteId')
+    var modalUsuarioSolicitanteNome = detailModal.querySelector('#delail_UsuarioSolicitanteNome')
+    var modalUsuarioSolicitanteEmail = detailModal.querySelector('#delail_UsuarioSolicitanteEmail')
+    var modalUsuarioSolicitanteTelefone = detailModal.querySelector('#delail_UsuarioSolicitanteTelefone')
+    var modalUsuarioSolicitanteSiglaDep = detailModal.querySelector('#delail_UsuarioSolicitanteSiglaDep')
+    var modalUsuarioSolicitanteSala = detailModal.querySelector('#delail_UsuarioSolicitanteSala')
+
+    var modalUsuarioAtendidoId = detailModal.querySelector('#delail_UsuarioAtendidoId')
+    var modalUsuarioAtendidoNome = detailModal.querySelector('#delail_UsuarioAtendidoNome')
+    var modalUsuarioAtendidoEmail = detailModal.querySelector('#delail_UsuarioAtendidoEmail')
+    var modalUsuarioAtendidoTelefone = detailModal.querySelector('#delail_UsuarioAtendidoTelefone')
+    var modalUsuarioAtendidoSiglaDep = detailModal.querySelector('#delail_UsuarioAtendidoSiglaDep')
+    var modalUsuarioAtendidoSala = detailModal.querySelector('#delail_UsuarioAtendidoSala')
+
+    var modalUsuarioAutorizadorId = detailModal.querySelector('#delail_UsuarioAutorizadorId')
+    var modalUsuarioAutorizadorNome = detailModal.querySelector('#delail_UsuarioAutorizadorNome')
+    var modalUsuarioAutorizadorEmail = detailModal.querySelector('#delail_UsuarioAutorizadorEmail')
+    var modalUsuarioAutorizadorTelefone = detailModal.querySelector('#delail_UsuarioAutorizadorTelefone')
+    var modalUsuarioAutorizadorSiglaDep = detailModal.querySelector('#delail_UsuarioAutorizadorSiglaDep')
+    var modalUsuarioAutorizadorSala = detailModal.querySelector('#delail_UsuarioAutorizadorSala')
+
+    var modalUsuarioAtendenteId = detailModal.querySelector('#delail_UsuarioAtendenteId')
+    var modalUsuarioAtendenteNome = detailModal.querySelector('#delail_UsuarioAtendenteNome')
+    var modalUsuarioAtendenteEmail = detailModal.querySelector('#delail_UsuarioAtendenteEmail')
+    var modalUsuarioAtendenteTelefone = detailModal.querySelector('#delail_UsuarioAtendenteTelefone')
+    var modalUsuarioAtendenteSiglaDep = detailModal.querySelector('#delail_UsuarioAtendenteSiglaDep')
+    var modalUsuarioAtendenteSala = detailModal.querySelector('#delail_UsuarioContatoSala')
+
+    var modaldataAtendimento = detailModal.querySelector('#delail_dataAtendimento')
+    var modalSolicitacao = detailModal.querySelector('#delail_nrSolicitacao')
+    var modalRequisicao = detailModal.querySelector('#delail_nrRequisicao')
+    var modalchamadoObs = detailModal.querySelector('#delail_chamadoObs')
+    var modalidStatus = detailModal.querySelector('#delail_idStatus')
+    var modalidChamadoPai = detailModal.querySelector('#delail_idChamadoPai')
+    var modalstatusdoatendimento = detailModal.querySelector('#delail_statusdoatendimento')
+
+
+    modalTitle.textContent = 'Detalhes do '+recipientTitle
+    modalTitulo.textContent = 'Título: '+recipientTitulo
+    modalDescricao.textContent = 'Descrição: '+recipientDescricao
+    modalDataAbertura.textContent = 'Data da abertura: '+recipientDataAbertura
+
+    modalUsuarioContatoId.textContent = 'id: '+recipientUsuarioContatoId
+    modalUsuarioContatoNome.textContent = 'Nome: '+recipientUsuarioContatoNome
+    modalUsuarioContatoEmail.textContent = 'Email: '+recipientUsuarioContatoEmail
+    modalUsuarioContatoTelefone.textContent = 'Tel: '+recipientUsuarioContatoTelefone
+    modalUsuarioContatoSiglaDep.textContent = recipientUsuarioContatoSiglaDep
+    modalUsuarioContatoSala.textContent = recipientUsuarioContatoSala
+
+    modalUsuarioSolicitanteId.textContent = 'id: '+recipientUsuarioSolicitanteId
+    modalUsuarioSolicitanteNome.textContent = 'Nome: '+recipientUsuarioSolicitanteNome
+    modalUsuarioSolicitanteEmail.textContent = 'Email: '+recipientUsuarioSolicitanteEmail
+    modalUsuarioSolicitanteTelefone.textContent = 'Tel: '+recipientUsuarioSolicitanteTelefone
+    modalUsuarioSolicitanteSiglaDep.textContent = recipientUsuarioSolicitanteSiglaDep
+    modalUsuarioSolicitanteSala.textContent = recipientUsuarioSolicitanteSala
+
+    modalUsuarioAtendidoId.textContent = 'id: '+recipientUsuarioAtendidoId
+    modalUsuarioAtendidoNome.textContent = 'Nome: '+recipientUsuarioAtendidoNome
+    modalUsuarioAtendidoEmail.textContent = 'Email: '+recipientUsuarioAtendidoEmail
+    modalUsuarioAtendidoTelefone.textContent = 'Tel: '+recipientUsuarioAtendidoTelefone
+    modalUsuarioAtendidoSiglaDep.textContent = recipientUsuarioAtendidoSiglaDep
+    modalUsuarioAtendidoSala.textContent = recipientUsuarioAtendidoSala
+
+    modalUsuarioAutorizadorId.textContent = 'id: '+recipientUsuarioAutorizadorId
+    modalUsuarioAutorizadorNome.textContent = 'Nome: '+recipientUsuarioAutorizadorNome
+    modalUsuarioAutorizadorEmail.textContent = 'Email: '+recipientUsuarioAutorizadorEmail
+    modalUsuarioAutorizadorTelefone.textContent = 'Tel: '+recipientUsuarioAutorizadorTelefone
+    modalUsuarioAutorizadorSiglaDep.textContent = recipientUsuarioAutorizadorSiglaDep
+    modalUsuarioAutorizadorSala.textContent = recipientUsuarioAutorizadorSala
+
+    modalUsuarioAtendenteId.textContent = 'id: '+recipientUsuarioAtendenteId
+    modalUsuarioAtendenteNome.textContent = 'Atendido por: '+recipientUsuarioAtendenteNome
+    modalUsuarioAtendenteEmail.textContent = 'Email: '+recipientUsuarioAtendenteEmail
+    modalUsuarioAtendenteTelefone.textContent = 'Tel: '+recipientUsuarioAtendenteTelefone
+    modalUsuarioAtendenteSiglaDep.textContent = recipientUsuarioAtendenteSiglaDep
+    modalUsuarioAtendenteSala.textContent = recipientUsuarioAtendenteSala
+
+    modaldataAtendimento.textContent = 'Data do atendimento: '+recipientdataAtendimento
+    modalSolicitacao.textContent = 'Número da Solicitação: '+recipientnrSolicitacao
+    modalRequisicao.textContent = 'Número da Requisição: '+recipientnrRequisicao
+    modalchamadoObs.textContent = 'Observação: '+recipientchamadoObs
+    modalidStatus.textContent = 'ID do Status: '+recipientidStatus
+    modalidChamadoPai.textContent = 'Chamado relacionado: '+recipientidChamadoPai
+    modalstatusdoatendimento.textContent = 'Status do Atendimento: '+recipientstatusdoatendimento
+
+  //  modalURL.action = recipientURL+'/admin/'+recipientDIR+'/novo'+recipientURI
+
+  })
+</script>

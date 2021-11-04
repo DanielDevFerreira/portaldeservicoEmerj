@@ -1,0 +1,216 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="editModalLabel">Alterar {{title}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAltBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-tipo-edit" id="edit-label-tipo" class="col-form-label col-md-12 mb-0 p-0">Tipo de conteúdo: </label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id-edit">
+              <select name="tipo" class="form-select form-select-sm" id="recipient-tipo-edit" required>
+                <option value=''>Selecione o tipo de conteúdo</option>
+                <option value='1'>Link de divulgação</option>
+                <option disabled value='2'>Notícia</option>
+                <option disabled value='3'>Evento</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-nome-edit" id="edit-label-nome" class="col-form-label col-md-12 mb-0 p-0">Nome {{title}}: </label>
+              <input type="text" class="form-control form-control-sm" name="nome" value="" id="recipient-nome-edit">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-urlcont-edit" id="edit-label-url" class="col-form-label col-md-12 mb-0 p-0">URL do link: </label>
+              <input type="text" class="form-control form-control-sm" name="url" value="" id="recipient-urlcont-edit">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-txturl-edit" id="edit-label-txturl" class="col-form-label col-md-12 mb-0 p-0">Texto do link: </label>
+              <input type="text" class="form-control form-control-sm" name="txturl" value="" id="recipient-txturl-edit">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="recipient-datainicio-edit" id="add-label-datainicio" class="col-form-label col-md-12 mb-0 p-0">Data início: </label>
+              <input id="recipient-datainicio-edit" type="text" name="datainicio" class="form-control form-control-sm" placeholder="Informe a data início" data-orientation="top">
+            </div>
+            <div class="form-group col-md-1.5">
+              <label for="recipient-horainicio-edit" id="add-label-datainicio" class="col-form-label col-md-12 mb-0 p-0">Hora: </label>
+              <select name="horainicio" class="form-select form-select-sm" id="recipient-horainicio-edit" required>
+                <option value='00'>00</option>
+                <option value='01'>01</option>
+                <option value='02'>02</option>
+                <option value='03'>03</option>
+                <option value='04'>04</option>
+                <option value='05'>05</option>
+                <option value='06'>06</option>
+                <option value='07'>07</option>
+                <option value='08'>08</option>
+                <option value='09'>09</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
+                <option value='15'>15</option>
+                <option value='16'>16</option>
+                <option value='17'>17</option>
+                <option value='18'>18</option>
+                <option value='19'>19</option>
+                <option value='20'>20</option>
+                <option value='21'>21</option>
+                <option value='22'>22</option>
+                <option value='23'>23</option>
+              </select>
+            </div>
+            <div class="form-group col-md-1.5">
+              <label for="recipient-mininicio-edit" id="add-label-mininicio" class="col-form-label col-md-12 mb-0 p-0">min: </label>
+              <select name="mininicio" class="form-select form-select-sm" id="recipient-mininicio-edit" required>
+                <option value='00'>00</option>
+                <option value='15'>15</option>
+                <option value='30'>30</option>
+                <option value='45'>45</option>
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-datafim-edit" id="add-label-datafim" class="col-form-label col-md-12 mb-0 p-0">Data fim: </label>
+              <input id="recipient-datafim-edit" type="text" name="datafim" class="form-control form-control-sm" placeholder="Informe a data fim" data-orientation="top">
+            </div>
+            <div class="form-group col-md-1.5">
+              <label for="recipient-horafim-edit" id="add-label-horafim" class="col-form-label col-md-12 mb-0 p-0">Hora: </label>
+              <select name="horafim" class="form-select form-select-sm" id="recipient-horafim-edit" required>
+                <option value='00'>00</option>
+                <option value='01'>01</option>
+                <option value='02'>02</option>
+                <option value='03'>03</option>
+                <option value='04'>04</option>
+                <option value='05'>05</option>
+                <option value='06'>06</option>
+                <option value='07'>07</option>
+                <option value='08'>08</option>
+                <option value='09'>09</option>
+                <option value='10'>10</option>
+                <option value='11'>11</option>
+                <option value='12'>12</option>
+                <option value='13'>13</option>
+                <option value='14'>14</option>
+                <option value='15'>15</option>
+                <option value='16'>16</option>
+                <option value='17'>17</option>
+                <option value='18'>18</option>
+                <option value='19'>19</option>
+                <option value='20'>20</option>
+                <option value='21'>21</option>
+                <option value='22'>22</option>
+                <option value='23'>23</option>
+              </select>
+            </div>
+            <div class="form-group col-md-1.5">
+              <label for="recipient-minfim-edit" id="add-label-minfim" class="col-form-label col-md-12 mb-0 p-0">min: </label>
+              <select name="minfim" class="form-select form-select-sm" id="recipient-minfim-edit" required>
+                <option value='00'>00</option>
+                <option value='15'>15</option>
+                <option value='30'>30</option>
+                <option value='45'>45</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-descricao-edit" id="edit-label-descricao" class="col-form-label col-md-12 mb-0 p-0">Descrição do conteúdo: </label>
+              <textarea class="form-control form-control-sm" name="descricao" value="" id="recipient-descricao-edit"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" name="button">Confirmar Alteração</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+    $(function () {
+      $('#recipient-datainicio-edit').datepicker({
+        language: 'pt-BR',
+        locale: 'pt-BR'
+      });
+    });
+
+    $(function () {
+      $('#recipient-datafim-edit').datepicker({
+        language: 'pt-BR',
+        locale: 'pt-BR'
+      });
+    });
+
+    var editModal = document.getElementById('editModal')
+    editModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url_edit')
+    var recipientId = button.getAttribute('data-bs-whatever-id_edit')
+    var recipientNome = button.getAttribute('data-bs-whatever-nome_edit')
+    var recipientTipo = button.getAttribute('data-bs-whatever-tipo_edit')
+    var recipientUrlCont = button.getAttribute('data-bs-whatever-urlcont_edit')
+    var recipientTxtUrl = button.getAttribute('data-bs-whatever-txturl_edit')
+    var recipientDtini = button.getAttribute('data-bs-whatever-datainicio_edit')
+    var recipientHrIni = button.getAttribute('data-bs-whatever-horainicio_edit')
+    var recipientMinIni = button.getAttribute('data-bs-whatever-mininicio_edit')
+    var recipientDtFim = button.getAttribute('data-bs-whatever-datafim_edit')
+    var recipientHrFim = button.getAttribute('data-bs-whatever-horafim_edit')
+    var recipientMinFim = button.getAttribute('data-bs-whatever-minfim_edit')
+    var recipientDescricao = button.getAttribute('data-bs-whatever-descricao_edit')
+
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir_edit')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title_edit')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow_edit')
+
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalTitle = editModal.querySelector('.modal-title')
+    var modalURL = editModal.querySelector('#urlAltBt')
+    var modalNomeLabel = editModal.querySelector('#edit-label-nome')
+    var modalNomeLabel = editModal.querySelector('#edit-label-nome')
+    var modalIdInput = editModal.querySelector('#recipient-id-edit')
+    var modalNomeInput = editModal.querySelector('#recipient-nome-edit')
+    var modalTipoInput = editModal.querySelector('#recipient-tipo-edit')
+    var modalUrlContInput = editModal.querySelector('#recipient-urlcont-edit')
+    var modalTxtUrlInput = editModal.querySelector('#recipient-txturl-edit')
+    var modalDataInicioInput = editModal.querySelector('#recipient-datainicio-edit')
+    var modalHoraInicioInput = editModal.querySelector('#recipient-horainicio-edit')
+    var modalMinInicioInput = editModal.querySelector('#recipient-mininicio-edit')
+    var modalDataFimInput = editModal.querySelector('#recipient-datafim-edit')
+    var modalHoraFimInput = editModal.querySelector('#recipient-horafim-edit')
+    var modalMinFimInput = editModal.querySelector('#recipient-minfim-edit')
+    var modalDescricaoInput = editModal.querySelector('#recipient-descricao-edit')
+
+
+    modalTitle.textContent = 'Alterar ' + recipientTitle
+    modalNomeLabel.textContent = 'Nome ' + recipientTitle
+    modalNomeInput.value = recipientNome
+    modalIdInput.value = recipientId
+    modalTipoInput.value = recipientTipo
+    modalDescricaoInput.value = recipientDescricao
+    modalUrlContInput.value = recipientUrlCont
+    modalTxtUrlInput.value = recipientTxtUrl
+    modalDataInicioInput.value = recipientDtini
+    modalHoraInicioInput.value = recipientHrIni
+    modalMinInicioInput.value = recipientMinIni
+    modalDataFimInput.value = recipientDtFim
+    modalHoraFimInput.value = recipientHrFim
+    modalMinFimInput.value = recipientMinFim
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/'+recipientId+'/edit'
+
+  })
+</script>

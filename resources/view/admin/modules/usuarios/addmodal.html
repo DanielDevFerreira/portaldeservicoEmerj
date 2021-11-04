@@ -1,0 +1,93 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="add-label-title">Cadastrar Usuário</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAddUsuarioBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label>Nome do Usuário</label>
+                <input type="text" name="nome" maxlength="40" value="" required  class="form-control form-control-sm">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Perfil:</label>
+                <select name="perfil" required id="recipient-perfil-add" class="form-select form-select-sm" {{perfilDesenvDisable}}>
+                  <option value=''>Selecione o perfil do usuário</option>
+                  {{optionsPerfil}}
+                </select>
+            </div>
+
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Email</label>
+                <input type="email" name="email" maxlength="50" value="" required  class="form-control form-control-sm">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>Departamento:</label>
+                <select name="departamento" id="recipient-departamento-add" required  class="form-select form-select-sm">
+                  <option value=''>Selecione o departamento do usuário</option>
+                    {{optionsDepartamento}}
+                </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>Cargo:</label>
+                <select name="cargo" required  class="form-select form-select-sm">
+                  <option value=''>Selecione o cargo do usuário</option>
+                  {{optionsCargo}}
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label>Telefone de contato</label>
+                <input type="text" name="contato" maxlength="20" value="" required  class="form-control form-control-sm">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Localização:</label>
+                <select name="sala" id="recipient-localizacao-add" required  class="form-select form-select-sm">
+                  <option value=''>Selecione a localização do usuário</option>
+                  {{optionsLocalizacao}}
+                </select>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="add-button" name="button">Cadastrar Usuário</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#recipient-departamento-add').select2({
+          dropdownParent: $('#addModal')
+        });
+        $('#recipient-localizacao-add').select2({
+          dropdownParent: $('#addModal')
+        });
+   });
+
+
+    var addModal = document.getElementById('addModal')
+    addModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+
+    var modalURL = addModal.querySelector('#urlAddUsuarioBt')
+
+    modalURL.action = recipientURL+'/admin/usuarios/novo'
+
+  })
+</script>

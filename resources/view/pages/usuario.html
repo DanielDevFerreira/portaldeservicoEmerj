@@ -1,0 +1,52 @@
+<h4>Usuários</h4>
+<section id="usuario">
+  <div class="card text-dark mb-3">
+    <h5 class="card-header">André Ribeiro <small>Analista de sistemas</small></h5>
+    <div class="card-body">jhafs fasjkf askfjhas fkasjhf aksjfhaskfjh askfjhas f.</div>
+  </div>
+
+</section>
+<h5>Usuário - {{descricao}}</h5>
+<form method="post">
+  <div class="form-group">
+    <label>Nome do Usuário</label>
+      <input type="text" name="nome" maxlength="40" required autofocus class="campo">
+  </div>
+  <div class="form-group">
+    <label>Sobrenome</label>
+      <input type="text" name="sobrenome" maxlength="40" required class="campo">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+      <input type="email" name="email" maxlength="50" required class="campo">
+  </div>
+  <div class="form-group">
+    <label>Senha</label>
+      <input type="password" name="senha" maxlength="40" required class="campo">
+  </div>
+  <div class="form-group">
+    <label>Confirmação da Senha</label>
+      <input type="password" name="senha2" maxlength="40" required class="campo">
+  </div>
+  <div class="form-group">
+    <label>Cargo:</label>
+      <select name="id_cargo" id="id_cargo">
+        <option value=''>Selecione o cargo do usuário</option>
+        <option value="{{id_cargo}}">{{cargo_nm}}</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label>Lotação:</label>
+      <select name="id_lotacao" id="id_lotacao">
+        <option value=''>Selecione o lotação do usuário</option>
+        <option value="{{id_cargo}}">{{cargo_nm}}</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label>Sala</label>
+      <input type="text" name="sala" maxlength="20" required class="campo">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Enviar</button>
+  </div>
+</form>

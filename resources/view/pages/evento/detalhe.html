@@ -1,0 +1,41 @@
+<!--NOTÍCIAS-->
+<div id="container-principal" class="block">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 align-self-center text-center pt-3">
+        <h3 class="title">{{nome}} - {{local}}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 align-self-center text-center pt-3">
+        <a type="button" class="btn btn-transparente" data-bs-toggle="modal" data-bs-target="#ModalImgNoticia">
+          <img src="{{URL}}/files/eventos/2021/{{codigo}}.jpg"  class="img-fluid" alt="{{local}}" title="{{nome}}">
+          <br>clique para ampliar
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pt-3">
+        {{local}}
+      </div>
+    </div>
+  </div>
+</div>
+<!--//NOTÍCIAS-->
+<!-- Modal -->
+<div class="modal fade" id="ModalImgNoticia" tabindex="-1" aria-labelledby="ModalImgNoticiaLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalImgNoticiaLabel">{{nome}} - {{local}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="{{URL}}/files/eventos/2021/{{codigo}}.jpg"  class="img-fluid" alt="{{local}}" title="{{nome}}">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

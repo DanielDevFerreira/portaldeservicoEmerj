@@ -1,0 +1,42 @@
+<div class="row align-items-end">
+  <div class="col-md-3">
+    <h5 class="card-title"><i class="bi-{{icon}}" style="font-size: 2rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: dimgray;"></i>{{title}}</h5>
+  </div>
+  <div class="col-md-6 d-flex justify-content-center">
+    <a href="{{URL}}/admin/{{direntity}}/novo" type="button" class="btn btn-sm btn-primary float-sm-right h5" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-whatever-url="{{URL}}" data-bs-whatever-uri="{{uri}}" data-bs-whatever-dir="{{direntity}}"  data-bs-whatever-title="{{title}}" data-bs-whatever-titlelow="{{titlelow}}"><i class="bi-box-arrow-in-down" style="font-size: 1.rem; max-height:15px; margin-right: 5px; color: white;"></i>Cadastrar {{title}}</a>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>
+{{status}}
+<table id="data-table-categoriaIc" class="table table-sm table-light table-hover table-striped">
+  <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Tipo do Conteúdo</th>
+        <th scope="col">Nome</th>
+        <th scope="col">URL do Link</th>
+        <th scope="col">Texto do Link</th>
+        <th scope="col">Data Início</th>
+        <th scope="col">Data Fim</th>
+        <th scope="col"><span class="float-sm-right"></span></th>
+      </tr>
+  </thead>
+  <tbody>
+    {{itens}}
+  </tbody>
+</table>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var table = $('#data-table-categoriaIc').DataTable({
+      "bStateSave": true,
+      "fnStateSave": function (oSettings, oData) {
+        localStorage.setItem('offersDataTables', JSON.stringify(oData));
+      },
+      "fnStateLoad": function (oSettings) {
+        return JSON.parse(localStorage.getItem('offersDataTables'));
+      },
+      "language": { "url": "//cdn.datatables.net/plug-ins/1.11.1/i18n/pt_br.json" },
+    });
+  });
+</script>

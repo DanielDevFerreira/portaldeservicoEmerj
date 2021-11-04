@@ -1,0 +1,23 @@
+<tr class="tr-sm {{style_ativo}}">
+  <th scope="row"><small>{{id}}</small></th>
+  <td><small>{{noticia_tipo}}</small></td>
+  <td><small>{{noticia_nm}}</small></td>
+  <td><small>{{noticia_titulo}}</small></td>
+  <td><small>{{noticia_imgtittle}}</small></td>
+  <td><small>{{dt_ini}}</small></td>
+  <td><small>{{dt_fim}}</small></td>
+  <td>
+    <div role="toolbar" class="btn-toolbar float-sm-right">
+      <div class="btn-group dropleft" role="group">
+        <button id="btnGroupDrop{{id}}" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ações
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop{{id}}">
+          <a class="dropdown-item" href="{{URL}}/admin/{{direntity}}/{{id}}/edit" type="button" role="button" class="btn btn-primary btn-sm" name="button"><i class="bi-pencil-square" style="font-size: 1rem; margin-right: 3px; color: cornflowerblue;"></i>Editar</a>
+          <a class="dropdown-item" href="{{URL}}/admin/{{direntity}}/{{id}}/alterastatus" type="button" role="button" class="btn {{class_ativo}} btn-sm" name="button" data-bs-toggle="modal" data-bs-target="#ativaModal" data-bs-whatever-url="{{URL}}" data-bs-whatever-id="{{id}}" data-bs-whatever-nome="{{nome}}" data-bs-whatever-descricao="{{texto_ativo}}" data-bs-whatever-dir="{{direntity}}"  data-bs-whatever-title="{{title}}" data-bs-whatever-titlelow="{{titlelow}}"><i class="bi-exclamation-diamond" style="font-size: 1rem; margin-right: 3px; color: darkorange;"></i>{{texto_ativo}}</a>
+          <a class="dropdown-item" href="{{URL}}/admin/{{direntity}}/{{id}}/delete" type="button" role="button" class="btn btn-danger btn-sm" name="button" data-bs-toggle="modal" data-bs-target="#deleteModal" data-bs-whatever-url="{{URL}}" data-bs-whatever-id="{{id}}" data-bs-whatever-nome="{{nome}}" data-bs-whatever-dir="{{direntity}}"  data-bs-whatever-title="{{title}}" data-bs-whatever-titlelow="{{titlelow}}"><i class="bi-x-circle" style="font-size: 1rem; margin-right: 3px; color: red;"></i>Excluir</a>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>

@@ -1,0 +1,22 @@
+<form method="post" class="form-signin" enctype="multipart/form-data">
+  <a href="#inputEmail" id="facalogin" title="Faça login - Tecla de atalho (1)." accesskey="1">
+    <img class="mb-4" src="{{URL}}/includes/imgs/logo-emerj-azul.pq.png" alt="logotipo emerj" width="100" height="100">
+  </a>
+  <h1 class="h3 mb-3 font-weight-normal">Recuperar Senha</h1>
+    {{status}}
+  <label for="inputEmail" class="sr-only">Endereço de email</label>
+  <input type="email" id="inputEmail" name="emailrecupera" class="form-control" placeholder="Seu email" required autofocus>
+  <input type="hidden" id="inputEmailacao" name="acao" value="recuperar">
+  <div class="form-group mt-3">
+    <button type="submit" class="btn btn-ls btn-primary  pl-2" style="width:100%">Recuperar Senha</button>
+  </div>
+  <div class="checkbox mt-3 mb-1">
+    <label>
+      <span class="align-bottom float-sm-right"><a href="{{URL}}/admin/login">Fazer Login</a></span>
+    </label>
+  </div>
+  <div class="form-group hide">
+    <a href="{{URL}}/admin/cadastro" title="Clique para realizar seu cadastro no portal de serviços da EMERJ" id="button" class="btn btn-sm btn-secondary"><i class="bi-chat-dots" style="font-size: 15px; margin-right: 5px; color: white;"></i>Primeiro acesso? Valide seu cadastro.</a>
+  </div>
+  <p class="mt-5 mb-3">EMERJ - Portal de Serviços DETEC</p>
+</form>

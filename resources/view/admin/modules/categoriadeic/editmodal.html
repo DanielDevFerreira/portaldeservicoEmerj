@@ -1,0 +1,91 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="editModalLabel">Alterar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAltBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-nome" id="edit-label-nome" class="col-form-label col-md-12 mb-0 p-0">Nome</label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id">
+              <input type="text" class="form-control" name="nome" value="" id="recipient-nome">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-titulo" id="edit-label-titulo" class="col-form-label col-md-12 mb-0 p-0">Título</label>
+              <input type="text" class="form-control" name="titulo" value="" id="recipient-titulo">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-descricao" id="edit-label-descricao" class="col-form-label col-md-12 mb-0 p-0">Descrição</label>
+              <textarea class="form-control" name="descricao" value="" id="recipient-descricao"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-icone" id="edit-label-icone" class="col-form-label col-md-12 mb-0 p-0">Ícone</label>
+              <input type="text" class="form-control" name="icone" value="" id="recipient-icone">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-estilo" id="edit-label-estilo" class="col-form-label col-md-12 mb-0 p-0">Estilo</label>
+              <input type="text" class="form-control" name="estilo" value="" id="recipient-estilo">
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" name="button">Confirmar Alteração</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var editModal = document.getElementById('editModal')
+    editModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url_edit')
+    var recipientId = button.getAttribute('data-bs-whatever-id_edit')
+    var recipientNome = button.getAttribute('data-bs-whatever-nome_edit')
+    var recipientTitulo = button.getAttribute('data-bs-whatever-titulo_edit')
+    var recipientDescricao = button.getAttribute('data-bs-whatever-descricao_edit')
+    var recipientIcone = button.getAttribute('data-bs-whatever-icone_edit')
+    var recipientEstilo = button.getAttribute('data-bs-whatever-estilo_edit')
+
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir_edit')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title_edit')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow_edit')
+
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalTitle = editModal.querySelector('.modal-title')
+    var modalURL = editModal.querySelector('#urlAltBt')
+    var modalIdInput = editModal.querySelector('#recipient-id')
+    var modalNomeInput = editModal.querySelector('#recipient-nome')
+    var modalTituloInput = editModal.querySelector('#recipient-titulo')
+    var modalDescricaoInput = editModal.querySelector('#recipient-descricao')
+    var modalIconeInput = editModal.querySelector('#recipient-icone')
+    var modalEstiloInput = editModal.querySelector('#recipient-estilo')
+
+
+    modalTitle.textContent = 'Alterar ' + recipientTitle
+    modalNomeInput.value = recipientNome
+    modalIdInput.value = recipientId
+    modalTituloInput.value = recipientTitulo
+    modalDescricaoInput.value = recipientDescricao
+    modalIconeInput.value = recipientIcone
+    modalEstiloInput.value = recipientEstilo
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/'+recipientId+'/edit'
+
+  })
+</script>

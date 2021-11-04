@@ -1,0 +1,85 @@
+<!--Modal para para editar Departamento -->
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="modalEditLabel">Alterar </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAltDepartamentoBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-name" class="col-form-label col-md-12 mb-0 p-0">Nome do departamento: </label>
+              <input type="hidden" class="form-control" value="" id="recipient-idpai">
+              <input type="text" class="form-control" name="nome" value="" id="recipient-name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-prot" class="col-form-label col-md-6 ml-2 p-0">Nr Prot: </label>
+              <input type="text" class="form-control" name="prot_nr" value="" id="recipient-prot">
+            </div>
+            <div class="form-group col-mb-12">
+              <label for="recipient-sigla" class="col-form-label col-md-6 mr-6 p-0">Sigla: </label>
+              <input type="text" class="form-control" name="sigla" value="" id="recipient-sigla">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-mb-12">
+              <label for="recipient-pai" class="col-form-label col-md-12 mb-0 p-0">Departamento Pai: </label>
+              <select id="recipient-pai" name="departamento" value="" class="form-select form-select-sm">
+                <option value=''>Selecione o Departamento Pai </option>
+                {{optionsBuscaDepartamento}}
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" name="button">Confirmar Alteração</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var modalEdit = document.getElementById('modalEdit')
+    modalEdit.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientURI = button.getAttribute('data-bs-whatever-uri')
+    var recipientId = button.getAttribute('data-bs-whatever-id')
+    var recipientNome = button.getAttribute('data-bs-whatever-nome')
+    var recipientSigla = button.getAttribute('data-bs-whatever-sigla')
+    var recipientProt = button.getAttribute('data-bs-whatever-prot')
+    var recipientDepPaiId = button.getAttribute('data-bs-whatever-DepPaiId')
+
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalTitle = modalEdit.querySelector('.modal-title')
+    var modalURL = modalEdit.querySelector('#urlAltDepartamentoBt')
+    var modalNomeInput = modalEdit.querySelector('#recipient-name')
+    var modalSiglaInput = modalEdit.querySelector('#recipient-sigla')
+    var modalProtInput = modalEdit.querySelector('#recipient-prot')
+    var modalIdPaiInput = modalEdit.querySelector('#recipient-idpai')
+    var modalPaiInput = modalEdit.querySelector('#recipient-pai')
+
+    ///************************
+    //SE HOUVER DIVERGÊNCIAS DARÁ ERRO 405 MÉDOTO NÃO ENCONTRADO!!!!!!!!!!!!!!
+    ///************************
+
+    modalTitle.textContent = 'Alterar ' + recipientNome
+    modalNomeInput.value = recipientNome
+    modalSiglaInput.value = recipientSigla
+    modalProtInput.value = recipientProt
+    modalIdPaiInput.value = recipientDepPaiId
+    modalPaiInput.value = recipientDepPaiId
+
+    modalURL.action = recipientURL+'/admin/departamentos/'+recipientId+'/edit'+recipientURI
+
+  })
+</script>

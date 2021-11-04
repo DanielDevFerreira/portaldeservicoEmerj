@@ -1,0 +1,22 @@
+INCLUIR EM Controller/Admin/ o arquivo com a classe responsaveis pela sua rota.
+INCLUIR o include da página com as ROTAS no arquivo app/routes/admin.php
+include __DIR__.'/admin/usuarios.php';
+
+INCLUIR na Class $modules do arquivo Controller/Admin/Page.php as label e links
+
+criar o arquivo .php com o mesmo nome dado na classe $modules
+incluir neste arquivo as rotas (atenção aos nomes das classes e métodos)  
+ 
+app/routes/admin/xxxxx.php
+
+Xxxx.php função getXxxxx()
+  $content = View::render('admin/modules/chamados/index',[
+
+Atenção ao namespace!!!!!
+Atenção ao quantidade de parâmetros recebidos!!!!!
+Atenção ao Nome correto dos Métodos na class app/Controller/Admin/Xxxxx.php e routes/admin/xxxx.php !!!!!
+
+
+
+
+

@@ -1,0 +1,120 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="editModalLabel">Alterar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAltUsuarioBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label>Nome do Usuário</label>
+               <input type="hidden" class="form-control" name="id" value="" id="recipient-id-edit">
+                <input type="text" name="nome" id="recipient-nome-edit" maxlength="40" value="" required  class="form-control form-control-sm">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Perfil:</label>
+                <select name="perfil" required id="recipient-perfil-edit" class="form-select form-select-sm" {{perfilDesenvDisable}}>
+                  <option value=''>Selecione o perfil do usuário</option>
+                  {{optionsPerfil}}
+                </select>
+            </div>
+
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Email</label>
+                <input type="email" name="email" id="recipient-email-edit" maxlength="50" value="" required  class="form-control form-control-sm">
+            </div>
+
+            <div class="form-group col-md-6">
+              <label>Departamento:</label>
+                <select name="departamento" id="recipient-departamento-edit" required  class="form-select form-select-sm">
+                  <option value=''>Selecione o departamento do usuário</option>
+                    {{optionsDepartamento}}
+                </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label>Cargo:</label>
+                <select name="cargo" required id="recipient-cargo-edit" class="form-select form-select-sm">
+                  <option value=''>Selecione o cargo do usuário</option>
+                  {{optionsCargo}}
+                </select>
+            </div>
+
+            <div class="form-group col-md-4">
+              <label>Telefone de contato</label>
+                <input type="text" name="contato" id="recipient-contato-edit" maxlength="20" value="" required  class="form-control form-control-sm">
+            </div>
+            <div class="form-group col-md-4">
+              <label>Localização:</label>
+                <select name="sala" id="recipient-localizacao-edit" required  class="form-select form-select-sm">
+                  <option value=''>Selecione a localização do usuário</option>
+                  {{optionsLocalizacao}}
+                </select>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" name="button">Confirmar Alteração</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var editModal = document.getElementById('editModal')
+    editModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url-edit')
+    var recipientId = button.getAttribute('data-bs-whatever-id-edit')
+    var recipientNome = button.getAttribute('data-bs-whatever-nome-edit')
+    var recipientPerfil = button.getAttribute('data-bs-whatever-perfil-edit')
+    var recipientEmail = button.getAttribute('data-bs-whatever-email-edit')
+    var recipientDepartamento = button.getAttribute('data-bs-whatever-departamento-edit')
+    var recipientLocalizacao = button.getAttribute('data-bs-whatever-localizacao-edit')
+    var recipientContato = button.getAttribute('data-bs-whatever-contato-edit')
+    var recipientCargo = button.getAttribute('data-bs-whatever-cargo-edit')
+
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir-edit')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title-edit')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow-edit')
+
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalTitle = editModal.querySelector('.modal-title')
+    var modalURL = editModal.querySelector('#urlAltUsuarioBt')
+    var modalIdInput = editModal.querySelector('#recipient-id-edit')
+    var modalNomeInput = editModal.querySelector('#recipient-nome-edit')
+    var modalPerfilInput = editModal.querySelector('#recipient-perfil-edit')
+    var modalEmailInput = editModal.querySelector('#recipient-email-edit')
+    var modalDepartamentoInput = editModal.querySelector('#recipient-departamento-edit')
+    var modalLocalizacaoInput = editModal.querySelector('#recipient-localizacao-edit')
+    var modalContatoInput = editModal.querySelector('#recipient-contato-edit')
+    var modalCargoInput = editModal.querySelector('#recipient-cargo-edit')
+
+
+    modalTitle.textContent = 'Alterar ' + recipientTitle
+    modalIdInput.value = recipientId
+    modalNomeInput.value = recipientNome
+    modalPerfilInput.value = recipientPerfil
+    modalEmailInput.value = recipientEmail
+    modalDepartamentoInput.value = recipientDepartamento
+    modalCargoInput.value = recipientCargo
+    modalContatoInput.value = recipientContato
+    modalLocalizacaoInput.value = recipientLocalizacao
+
+
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/'+recipientId+'/edit'
+
+  })
+</script>

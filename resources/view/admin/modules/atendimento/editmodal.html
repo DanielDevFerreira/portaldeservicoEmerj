@@ -1,0 +1,98 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="editModalLabel">Alterar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAltBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-departamento" id="add-label-departamento" class="col-form-label col-md-12 mb-0 p-0">Departamento</label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id">
+              <select name="departamento" required id="recipient-departamento" required class="form-select form-select-sm">
+                <option value=''>Selecione o departamento.</option>
+                  {{optionsDepartamento}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-servico" id="add-label-servico" class="col-form-label col-md-12 mb-0 p-0">Serviço</label>
+              <select name="servico" required id="recipient-servico" required class="form-select form-select-sm">
+                <option value=''>Selecione o serviço</option>
+                  {{optionsServico}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label for="recipient-tipodeic" id="add-label-tipodeic" class="col-form-label col-md-12 mb-0 p-0">Tipo de IC</label>
+              <select name="tipodeic" required id="recipient-tipodeic" required class="form-select form-select-sm">
+                <option value=''>Selecione o tipo de IC</option>
+                  {{optionsTiposdeic}}
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="recipient-sla" id="add-label-sla" class="col-form-label col-md-12 mb-0 p-0">SLA</label>
+              <select name="sla" required id="recipient-sla" required class="form-select form-select-sm">
+                <option value=''>Selecione a SLA</option>
+                <option value='24'>24 Horas</option>
+                <option value='48'>48 Horas</option>
+                <option value='72'>72 Horas</option>
+                <option value='168'>Uma semana</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" name="button">Confirmar Ateração</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var editModal = document.getElementById('editModal')
+    editModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+    var recipientId = button.getAttribute('data-bs-whatever-id')
+    var recipientDescricao = button.getAttribute('data-bs-whatever-descricao')
+    var recipientDIR = button.getAttribute('data-bs-whatever-dir')
+    var recipientTitle = button.getAttribute('data-bs-whatever-title')
+    var recipientTitlelow = button.getAttribute('data-bs-whatever-titlelow')
+
+    var recipientDepartamento = button.getAttribute('data-bs-whatever-id_departamento')
+    var recipientServico = button.getAttribute('data-bs-whatever-id_servico')
+    var recipientTipodeic = button.getAttribute('data-bs-whatever-id_tipodeic')
+    var recipientSla = button.getAttribute('data-bs-whatever-id_sla')
+
+    // Conteúdo que será injetado no form de alteração no Modal
+    var modalTitle = editModal.querySelector('.modal-title')
+    var modalURL = editModal.querySelector('#urlAltBt')
+    var modalIdInput = editModal.querySelector('#recipient-id')
+
+    var modalDepartamentoInput = editModal.querySelector('#recipient-departamento')
+    var modalServicoInput = editModal.querySelector('#recipient-servico')
+    var modalTipoicInput = editModal.querySelector('#recipient-tipodeic')
+    var modalSlaInput = editModal.querySelector('#recipient-sla')
+
+    modalTitle.textContent = 'Alterar ' + recipientTitle
+    modalIdInput.value = recipientId
+
+    modalDepartamentoInput.value = recipientDepartamento
+    modalServicoInput.value = recipientServico
+    modalTipoicInput.value = recipientTipodeic
+    modalSlaInput.value = recipientSla
+
+    modalURL.action = recipientURL+'/admin/'+recipientDIR+'/'+recipientId+'/edit'
+
+  })
+</script>

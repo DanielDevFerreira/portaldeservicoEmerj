@@ -1,0 +1,148 @@
+<!--Modal para para editar Localizacao -->
+<div class="modal fade" id="addModal" tabindex="0" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header alert-primary">
+        <i class="bi-pencil-square" style="font-size: 1.5rem; margin-right: 8px; vertical-align: bootom; padding-bootom: 0px; color: firebrike;"></i>
+        <h5 class="modal-title" id="addModalLabel">Cadastrar Itens de Configuração</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form id="urlAddItensconfBt" action="" method="post">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-3">
+              <label for="recipient-patrimonio" class="small-label is-required col-form-label col-form col-md-12 mb-0 p-0">Patrimônio: </label>
+              <input type="hidden" class="form-control" name="id" value="" id="recipient-id">
+              <input type="text" class="form-control form-control-sm" name="patrimonio" maxlength="12" value="" id="recipient-patrimonio">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-ndgtec" class="small-label col-form-label col-md-12 mb-0 p-0">N.DGTEC: </label>
+                <input type="text" class="form-control form-control-sm" name="ndgtec" maxlength="12" value="" id="recipient-ndgtec">
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-tipodeic" class="small-label col-form-label col-md-12 mb-0 p-0">Tipo de Item: </label>
+              <select name="tipodeic" required value="" class="form-select form-select-sm" id="recipient-tipodeic">
+                <option value=''>Selecione o Tipo de Item</option>
+                {{optionsBuscaTipodeic}}
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label for="recipient-cod_itemdeconfiguracao_dep" class="small-label col-form-label col-md-12 mb-0 p-0">Item de Configuração: </label>
+              <select name="itemdeconfiguracao" value="" class="form-select form-select-sm" id="recipient-itemdeconfiguracao">
+                <option value=''>Conectado à...</option>
+                {{optionsBuscaICs}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-name" class="small-label col-form-label col-md-12 mb-0 p-0">Nome: </label>
+                <input type="text" required class="form-control form-control-sm" maxlength="60" name="nome" value="" id="recipient-name">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-localizacao" class="small-label col-form-label col-md-12 mb-0 p-0">Localização: </label>
+              <select name="localizacao" value="" class="form-select form-select-sm" id="recipient-localizacao">
+                <option value=''>Selecione a Localização</option>
+                {{optionsBuscaLocalizacao}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-descricao" class="small-label col-form-label col-md-12 mb-0 p-0">Descrição: </label>
+              <textarea class="form-control" name="descricao" value="" maxlength="255" id="recipient-descricao"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="recipient-departamento" class="small-label col-form-label col-md-12 mb-0 p-0">Departamento: </label>
+              <select name="departamento" required value="" class="form-select form-select-sm" id="recipient-departamento">
+                <option value=''>Selecione o Departamento</option>
+                {{optionsBuscaDepartamento}}
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="recipient-usuario" class="small-label col-form-label col-md-12 mb-0 p-0">Usuário: </label>
+              <select name="usuario" value="" class="form-select form-select-sm" id="recipient-usuario">
+                <option value=''>Selecione o Usuário</option>
+                {{optionsBuscaUsuario}}
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="recipient-so" class="small-label col-form-label col-md-12 mb-0 p-0">SO: </label>
+                <input type="text" class="form-control form-control-sm" maxlength="100" name="so" value="" id="recipient-so">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="recipient-rede" class="small-label col-form-label col-md-12 mb-0 p-0">Rede: </label>
+                <input type="text" class="form-control form-control-sm" maxlength="50" name="rede" value="" id="recipient-rede">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="recipient-office" class="small-label col-form-label col-md-12 mb-0 p-0">Office: </label>
+                <input type="text" class="form-control form-control-sm" maxlength="20" name="office" value="" id="recipient-office">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="recipient-memoria" class="small-label col-form-label col-md-12 mb-0 p-0">Memória: </label>
+                <input type="text" class="form-control form-control-sm" maxlength="20" name="memoria" value="" id="recipient-memoria">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="recipient-hardisc" class="small-label col-form-label col-md-12 mb-0 p-0">Hardisc: </label>
+                <input type="text" class="form-control form-control-sm" maxlength="20" name="hardisc" value="" id="recipient-hardisc">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="recipient-monitor" class="small-label col-form-label col-md-12 mb-0 p-0">Monitor: </label>
+                <input type="text" class="form-control form-control-sm" maxlength="100" name="monitor" value="" id="recipient-monitor">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="recipient-estabilizador" class="small-label col-form-label col-md-12 mb-0 p-0">Estabilizador: </label>
+                <input type="text" class="form-control form-control-sm" maxlength="100" name="estabilizador" value="" id="recipient-estabilizador">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="recipient-obs" class="small-label col-form-label col-md-12 mb-0 p-0">Obs: </label>
+              <textarea class="form-control" name="obs" value="" maxlength="255" id="recipient-obs"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer col-mb-12">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" name="button">Cadastrar Item</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#recipient-itemdeconfiguracao').select2({
+          dropdownParent: $('#addModal')
+        });
+        $('#recipient-departamento').select2({
+          dropdownParent: $('#addModal')
+        });
+        $('#recipient-localizacao').select2({
+          dropdownParent: $('#addModal')
+        });
+        $('#recipient-usuario').select2({
+          dropdownParent: $('#addModal')
+        });
+    });
+
+
+    var addModal = document.getElementById('addModal')
+    addModal.addEventListener('show.bs.modal', function (event) {
+    // Button that triggered the modal
+    var button = event.relatedTarget
+    // Informação extraída dos atributos do data-bs-* no botão (item.html)
+    var recipientURL = button.getAttribute('data-bs-whatever-url')
+
+    var modalURL = addModal.querySelector('#urlAddItensconfBt')
+
+    modalURL.action = recipientURL+'/admin/itensconfs/novo'
+
+  })
+</script>

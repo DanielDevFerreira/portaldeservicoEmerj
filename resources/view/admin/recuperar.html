@@ -1,0 +1,29 @@
+<form method="post" class="form-signin" enctype="multipart/form-data">
+  <a href="#inputEmail" id="facalogin" title="Faça login - Tecla de atalho (1)." accesskey="1">
+    <img class="mb-4" src="{{URL}}/includes/imgs/logo-emerj-azul.pq.png" alt="logotipo emerj" width="100" height="100">
+  </a>
+  <h1 class="h3 mb-3 font-weight-normal">Digite uma nova senha</h1>
+      {{status}}
+  <label class="align-bottom float-sm-left pl-2">Nova senha</label>
+  <input type="password" class="form-control" name="novasenha" required autofocus>
+  <label class="align-bottom float-sm-left pl-2">Confirmar senha</label>
+  <input type="password" class="form-control" name="novasenhaconfirma" required autofocus>
+  <input type="hidden" name="acao" value="alterarsenha" required autofocus>
+  <div class="form-group mt-3">
+      <button type="submit" class="btn btn-ls btn-primary" style="width:100%">Atualizar Senha</button>
+  </div>
+  <div class="checkbox mt-3 mb-1">
+    <label>
+      <span class="align-bottom float-sm-right"><a href="{{URL}}/admin/login">Fazer Login</a></span>
+    </label>
+  </div>
+  <div class="form-group hide">
+    <a href="{{URL}}/admin/cadastro">
+      <button type="button" name="button" class="btn btn-sm btn-secondary">
+        <i class="bi-chat-dots" style="font-size: 15px; margin-right: 5px; color: white;"></i>
+        Primeiro acesso? Valide seu cadastro.
+      </button>
+    </a>
+  </div>
+  <p class="mt-5 mb-3">EMERJ - Portal de Serviços DETEC</p>
+</form>

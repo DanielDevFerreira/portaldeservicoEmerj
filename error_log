@@ -1,0 +1,222 @@
+[22-Sep-2021 17:40:56 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php on line 773
+[28-Sep-2021 10:59:02 America/New_York] PHP Warning:  DateTime::diff() expects parameter 1 to be DateTimeInterface, string given in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Instagrams.php on line 234
+[28-Sep-2021 10:59:35 America/New_York] PHP Warning:  DateTime::diff() expects parameter 1 to be DateTimeInterface, string given in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Instagrams.php on line 234
+[29-Sep-2021 01:33:07 America/New_York] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Controller\Admin\Page::getPanel(), 3 passed in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php on line 609 and exactly 5 expected in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php:306
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php(609): App\Controller\Admin\Page::getPanel('Cadastrar Chama...', '<div class="for...', 'chamados')
+#1 /home/emerjco/public_html/portalservicos/routes/admin/chamados.php(84): App\Controller\Admin\Chamados::getNovoChamado(Object(App\Http\Request))
+#2 [internal function]: {closure}(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Requi in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 306
+[29-Sep-2021 03:49:11 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 280
+[29-Sep-2021 03:49:11 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 280
+[29-Sep-2021 04:07:23 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 280
+[29-Sep-2021 04:07:23 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 280
+[29-Sep-2021 04:08:55 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 280
+[29-Sep-2021 04:08:55 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 280
+[29-Sep-2021 04:09:17 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 280
+[29-Sep-2021 04:09:17 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Page.php on line 280
+[29-Sep-2021 14:20:35 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php on line 707
+[30-Sep-2021 16:38:14 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Itensconfs::getNovoItensconf() in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php on line 22
+[30-Sep-2021 16:51:49 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php on line 707
+[01-Oct-2021 17:52:52 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Itensconfs::getNovoItensconf() in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php on line 22
+[01-Oct-2021 18:05:46 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Itensconfs::getNovoItensconf() in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php on line 22
+[01-Oct-2021 18:05:51 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Itensconfs::getNovoItensconf() in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php on line 22
+[05-Oct-2021 01:34:24 America/Sao_Paulo] PHP Warning:  fopen(admin/logs/insert_log_05-10-2021.txt): failed to open stream: No such file or directory in /home/emerjco/public_html/portalservicos/app/Utils/Geralog.php on line 27
+[05-Oct-2021 01:34:24 America/Sao_Paulo] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/emerjco/public_html/portalservicos/app/Utils/Geralog.php on line 28
+[05-Oct-2021 01:34:24 America/Sao_Paulo] PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/emerjco/public_html/portalservicos/app/Utils/Geralog.php on line 29
+[05-Oct-2021 01:43:30 America/Sao_Paulo] PHP Warning:  fopen(admin/logs/delete_log_05-10-2021.txt): failed to open stream: No such file or directory in /home/emerjco/public_html/portalservicos/app/Utils/Geralog.php on line 27
+[05-Oct-2021 01:43:30 America/Sao_Paulo] PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in /home/emerjco/public_html/portalservicos/app/Utils/Geralog.php on line 28
+[05-Oct-2021 01:43:30 America/Sao_Paulo] PHP Warning:  fclose() expects parameter 1 to be resource, bool given in /home/emerjco/public_html/portalservicos/app/Utils/Geralog.php on line 29
+[05-Oct-2021 15:57:19 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php on line 707
+[05-Oct-2021 16:04:46 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php on line 707
+[05-Oct-2021 16:12:19 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php on line 707
+[05-Oct-2021 16:54:30 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Itensconfs::getNovoItensconf() in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php on line 22
+[05-Oct-2021 17:03:30 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Itensconfs::getNovoItensconf() in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php on line 22
+[05-Oct-2021 17:03:59 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Itensconfs::getNovoItensconf() in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php on line 22
+[05-Oct-2021 17:04:04 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Itensconfs::getNovoItensconf() in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos in /home/emerjco/public_html/portalservicos/routes/admin/itensconfs.php on line 22
+[06-Oct-2021 05:52:20 America/New_York] PHP Warning:  imagejpeg(/home/emerjco/public_html/portalservicos/app/Controller/Admin/../../../files/noticias/capa/publicas.jpg): failed to open stream: No such file or directory in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Noticias.php on line 206
+[06-Oct-2021 12:20:14 America/New_York] PHP Warning:  Invalid argument supplied for foreach() in /home/emerjco/public_html/portalservicos/app/Controller/Admin/Chamados.php on line 707
+[08-Oct-2021 15:11:04 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Controller\Admin\Decoms::getNovoDecom() in /home/emerjco/public_html/portalservicos/routes/admin/decoms.php:22
+Stack trace:
+#0 [internal function]: {closure}(Object(App\Http\Request))
+#1 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/RequireAdminLogin.php(21): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\RequireAdminLogin->handle(Object(App\Http\Request), Object(Closure))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Mi in /home/emerjco/public_html/portalservicos/routes/admin/decoms.php on line 22
+[13-Oct-2021 04:00:53 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Model\Entity\Sessao::getSubsessaoPorId() in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:42
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(66): App\Controller\Pages\Site::getConteudo('1', '5', '1')
+#1 [internal function]: {closure}('1', '5', '1')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\Middlewar in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 42
+[13-Oct-2021 04:02:31 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Model\Entity\Sessao::getSubsessaoPorId() in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:42
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(66): App\Controller\Pages\Site::getConteudo('1', '5', '1')
+#1 [internal function]: {closure}('1', '5', '1')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\Middlewar in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 42
+[13-Oct-2021 04:03:16 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Model\Entity\Sessao::getSubsessaoPorId() in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:42
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(66): App\Controller\Pages\Site::getConteudo('1', '5', '1')
+#1 [internal function]: {closure}('1', '5', '1')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\Middlewar in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 42
+[13-Oct-2021 04:03:17 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Model\Entity\Sessao::getSubsessaoPorId() in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:42
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(66): App\Controller\Pages\Site::getConteudo('1', '5', '1')
+#1 [internal function]: {closure}('1', '5', '1')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\Middlewar in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 42
+[13-Oct-2021 04:04:05 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Model\Entity\Sessao::getSubsessaoPorId() in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:42
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(66): App\Controller\Pages\Site::getConteudo('1', '5', '1/')
+#1 [internal function]: {closure}('1', '5', '1/')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\Middlew in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 42
+[13-Oct-2021 04:04:12 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Model\Entity\Sessao::getSubsessaoPorId() in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:42
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(66): App\Controller\Pages\Site::getConteudo('1', '5', '1fsdf')
+#1 [internal function]: {closure}('1', '5', '1fsdf')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\M in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 42
+[13-Oct-2021 04:04:54 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Model\Entity\Sessao::getSubsessaoPorId() in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:42
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(66): App\Controller\Pages\Site::getConteudo('1', '5', '1')
+#1 [internal function]: {closure}('1', '5', '1')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\Middlewar in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 42
+[13-Oct-2021 04:08:49 America/New_York] PHP Fatal error:  Uncaught Error: Call to undefined method App\Model\Entity\Sessao::getSubsessaoPorId() in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:40
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(66): App\Controller\Pages\Site::getConteudoSubsessao('1', '5', '1')
+#1 [internal function]: {closure}('1', '5', '1')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\ in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 40
+[15-Oct-2021 17:38:54 America/New_York] PHP Fatal error:  Uncaught Error: Class 'App\Model\Entity\Evento' not found in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php:168
+Stack trace:
+#0 /home/emerjco/public_html/portalservicos/routes/pages.php(37): App\Controller\Pages\Site::getEventosCapa(Object(App\Http\Request), '')
+#1 [internal function]: {closure}(Object(App\Http\Request), '')
+#2 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(72): call_user_func_array(Object(Closure), Array)
+#3 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(83): App\Http\Middleware\Queue->next(Object(App\Http\Request))
+#4 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Maintenance.php(19): App\Http\Middleware\Queue->App\Http\Middleware\{closure}(Object(App\Http\Request))
+#5 /home/emerjco/public_html/portalservicos/app/Http/Middleware/Queue.php(87): App\Http\Middleware\Maintenance->handle(Object(App\Http\Request), Object(Closure))
+#6 /home/emerjco/public_html/portalservicos/app/Http/Router.php(219): App\Http\Mid in /home/emerjco/public_html/portalservicos/app/Controller/Pages/Site.php on line 168
+[19-Oct-2021 00:15:17 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function sendResponse() on null in /home/emerjco/public_html/portalservicos/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/emerjco/public_html/portalservicos/index.php on line 17
+[19-Oct-2021 01:15:36 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function sendResponse() on null in /home/emerjco/public_html/portalservicos/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/emerjco/public_html/portalservicos/index.php on line 17
+[19-Oct-2021 01:26:51 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function sendResponse() on null in /home/emerjco/public_html/portalservicos/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/emerjco/public_html/portalservicos/index.php on line 17
+[19-Oct-2021 01:35:16 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function sendResponse() on null in /home/emerjco/public_html/portalservicos/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/emerjco/public_html/portalservicos/index.php on line 17
+[19-Oct-2021 11:04:10 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function sendResponse() on null in /home/emerjco/public_html/portalservicos/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/emerjco/public_html/portalservicos/index.php on line 17
+[20-Oct-2021 09:12:47 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function sendResponse() on null in /home/emerjco/public_html/portalservicos/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/emerjco/public_html/portalservicos/index.php on line 17
+[21-Oct-2021 13:27:55 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function sendResponse() on null in /home/emerjco/public_html/portalservicos/index.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/emerjco/public_html/portalservicos/index.php on line 17

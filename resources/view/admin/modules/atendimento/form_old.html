@@ -1,0 +1,46 @@
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <h5 class="card-title">{{title}}</h5>
+  </div>
+  <div class="form-group col-md-6 d-flex justify-content-end" style="width:100%">
+      <a href="{{URL}}/admin/atendimentos">
+        <button type="button" name="button" class="btn btn-sm btn-outline-primary">Voltar</button>
+      </a>
+  </div>
+</div>
+{{status}}
+<form method="post">
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label>Departamento</label>
+        <select name="departamento_id" required  class="form-select form-select-sm">
+          <option value=''>Selecione o Departamento</option>
+          {{optionsDepartamento}}
+        </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label>Serviço</label>
+        <select name="servico_id" required  class="form-select form-select-sm">
+          <option value=''>Selecione o Serviço</option>
+          {{optionsServico}}
+        </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label>Tipo de ICs</label>
+        <select name="itemdeconfiguracao_id" required  class="form-select form-select-sm">
+          <option value=''>Selecione o Tipo de IC</option>
+          {{optionsTipodeics}}
+        </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label>Item de Configuração</label>
+        <select name="itemdeconfiguracao_id" required  class="form-select form-select-sm">
+          <option value=''>Selecione o Item de Configuração</option>
+          {{optionsItemdeconfiguracao}}
+        </select>
+    </div>
+  </div>
+  <div class="form-group col-md-12 d-flex justify-content-center">
+    <button type="submit" class="btn btn-sm btn-primary" style="width:300px;">{{title}}</button>
+  </div>
+</form>
